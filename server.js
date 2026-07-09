@@ -23,14 +23,14 @@ function stripe() {
 
 // ── SECURITY ─────────────────────────────────────────────────────────────────
 app.use(helmet({ contentSecurityPolicy: false }));
-app.use(cors({
-  origin: process.env.ALLOWED_ORIGINS
-    ? process.env.ALLOWED_ORIGINS.split(',')
-    : ['http://localhost:3000', 'http://localhost:5500', 'http://127.0.0.1:5500',
-       'https://noctis.ro', 'https://www.noctis.ro', 'https://turbasebastian.github.io'],
-  credentials: true,
-}));
-
+app.use(cors({ origin: '*', credentials: false }));
+  app.use(cors({ origin: '*', credentials: false }));
+    app.use(cors({ origin: '*', credentials: false }));
+    app.use(cors({ origin: '*', credentials: false }));
+       app.use(cors({ origin: '*', credentials: false }));
+  app.use(cors({ origin: '*', credentials: false }));
+app.use(cors({ origin: '*', credentials: false }));
+app.use(cors({ origin: '*', credentials: false }));
 app.use('/api/webhook', express.raw({ type: 'application/json' }));
 app.use(express.json({ limit: '16kb' }));
 
