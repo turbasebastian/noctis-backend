@@ -145,7 +145,7 @@ app.post('/api/chat', async (req, res) => {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
-        'Authorization': `Bearer ${process.env.GROQ_API_KEY}`,
+     'Authorization': `Bearer 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`,
       },
       body: JSON.stringify({
         model: 'llama-3.3-70b-versatile',
