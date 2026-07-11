@@ -97,7 +97,7 @@ async function getOrCreateSession(id) {
   }
 
   // Creează sesiune nouă
-  const { v4: uuid } = require('uuid');
+ const uuid = () => Math.random().toString(36).slice(2) + Date.now().toString(36);
   const newId = id || uuid();
   const res = await db.query(
     `INSERT INTO sessions (id, plan, messages_used_today, last_reset_date)
