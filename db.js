@@ -63,7 +63,7 @@ async function getOrCreateSession(id) {
   if (!db) {
     // fallback in-memory
     if (id && memGet(id)) return memGet(id);
-    const { v4: uuid } = require('uuid');
+  const uuid = () => Math.random().toString(36).slice(2) + Date.now().toString(36);
     const newId = id || uuid();
     return memUpsert({
       id: newId,
