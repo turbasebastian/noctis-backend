@@ -1478,7 +1478,7 @@ const L={
 let curLang='ro', appHistory=[], curSys=L.ro.sys;
 
 // ── BACKEND CONFIG ──
-const BACKEND_URL = 'http://noctis-backend-production.up.railway.app'; // ← în producție: 'https://api.noctis.ro'
+const BACKEND_URL = 'https://noctis-backend-production.up.railway.app'; // ← în producție: 'https://api.noctis.ro'
 
 // ── SESSION ──
 let noctisSession = { sessionId: null, plan: 'free', remainingToday: 5 };
@@ -2062,5 +2062,6 @@ if(urlParams.get('noctis_session')){
 </script>
 <script>async function openPayModal(){const sid=localStorage.getItem('noctis_session_id');const r=await fetch('https://noctis-backend-production.up.railway.app/api/checkout',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({sessionId:sid,currency:'RON'})});const d=await r.json();if(d.url)window.location.href=d.url;}</script></body>
 </html>
+
 
 
