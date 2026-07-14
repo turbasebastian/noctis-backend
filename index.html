@@ -2,7 +2,7 @@
 <html lang="ro">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover, user-scalable=yes">
 <meta name="theme-color" content="#060612">
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
@@ -2062,6 +2062,7 @@ if(urlParams.get('noctis_session')){
 </script>
 <script>async function openPayModal(){const sid=localStorage.getItem('noctis_session_id');const r=await fetch('https://noctis-backend-production.up.railway.app/api/checkout',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({sessionId:sid,currency:'RON'})});const d=await r.json();if(d.url)window.location.href=d.url;}</script></body>
 </html>
+
 
 
 
