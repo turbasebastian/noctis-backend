@@ -7,8 +7,8 @@
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
 <meta name="apple-mobile-web-app-title" content="Noctis">
-<meta name="description" content="Noctis â€” LiniÈ™tea interioarÄƒ. SpaÈ›iu sigur de suport emoÈ›ional AI, disponibil 24/7. Anxietate, bucuria cÄƒsniciei, dependenÈ›e, armonie sexualÄƒ. Pentru romÃ¢nii de pretutindeni.">
-<title>Noctis â€” LiniÈ™tea interioarÄƒ</title>
+<meta name="description" content="Noctis — Liniștea interioară. Spațiu sigur de suport emoțional AI, disponibil 24/7. Anxietate, bucuria căsniciei, dependențe, armonie sexuală. Pentru românii de pretutindeni.">
+<title>Noctis — Liniștea interioară</title>
 
 <!-- PWA Manifest inline -->
 <link rel="manifest" href="data:application/json,{%22name%22:%22Noctis%20%E2%80%94%20Psihologie%2024%2F7%22,%22short_name%22:%22Noctis%22,%22start_url%22:%22.%22,%22display%22:%22standalone%22,%22background_color%22:%22%23060612%22,%22theme_color%22:%22%23060612%22,%22icons%22:[{%22src%22:%22data:image/svg+xml,%3Csvg%20xmlns%3D'http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg'%20viewBox%3D'0%200%20512%20512'%3E%3Crect%20width%3D'512'%20height%3D'512'%20rx%3D'120'%20fill%3D'%23060612'%2F%3E%3Ccircle%20cx%3D'256'%20cy%3D'256'%20r%3D'120'%20fill%3D'none'%20stroke%3D'%237B6FFF'%20stroke-width%3D'12'%2F%3E%3Ccircle%20cx%3D'256'%20cy%3D'256'%20r%3D'18'%20fill%3D'%237B6FFF'%2F%3E%3C%2Fsvg%3E%22,%22sizes%22:%22512x512%22,%22type%22:%22image/svg+xml%22}]}">
@@ -41,23 +41,23 @@
 html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
 body{font-family:var(--ff-body);background:var(--ink);color:var(--text);overflow-x:hidden;min-height:100vh}
 
-/* â”€â”€ GRAIN OVERLAY â”€â”€ */
+/* ── GRAIN OVERLAY ── */
 body::before{
   content:'';position:fixed;inset:0;z-index:0;pointer-events:none;
   background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='1'/%3E%3C/svg%3E");
   opacity:0.025;
 }
 
-/* â”€â”€ AMBIENT GLOWS â”€â”€ */
+/* ── AMBIENT GLOWS ── */
 .glow-1{position:fixed;top:-20vh;left:-10vw;width:70vw;height:70vh;border-radius:50%;background:radial-gradient(ellipse,rgba(108,99,255,0.12) 0%,transparent 70%);pointer-events:none;z-index:0}
 .glow-2{position:fixed;bottom:-10vh;right:-5vw;width:50vw;height:50vh;border-radius:50%;background:radial-gradient(ellipse,rgba(78,205,196,0.08) 0%,transparent 70%);pointer-events:none;z-index:0}
 
-/* â”€â”€ STARS â”€â”€ */
+/* ── STARS ── */
 #stars{position:fixed;inset:0;z-index:0;pointer-events:none}
 .star{position:absolute;border-radius:50%;background:white;animation:tw var(--d) infinite var(--dl)}
 @keyframes tw{0%,100%{opacity:var(--lo)}50%{opacity:var(--hi)}}
 
-/* â”€â”€ NAV â”€â”€ */
+/* ── NAV ── */
 nav{
   position:fixed;top:0;left:0;right:0;z-index:200;
   display:flex;align-items:center;justify-content:space-between;
@@ -103,10 +103,10 @@ nav{
 }
 .nav-cta:hover{background:#5b52ff;box-shadow:0 0 30px var(--violet-glow)}
 
-/* â”€â”€ SECTIONS â”€â”€ */
+/* ── SECTIONS ── */
 section{position:relative;z-index:1}
 
-/* â”€â”€ HERO â”€â”€ */
+/* ── HERO ── */
 .hero{
   min-height:100vh;display:flex;flex-direction:column;
   align-items:center;justify-content:center;
@@ -171,10 +171,10 @@ section{position:relative;z-index:1}
 
 @keyframes riseUp{from{opacity:0;transform:translateY(30px)}to{opacity:1;transform:translateY(0)}}
 
-/* â”€â”€ DIVIDER â”€â”€ */
+/* ── DIVIDER ── */
 .divider{height:0.5px;background:linear-gradient(90deg,transparent,var(--border-hi),transparent);margin:0 2rem;position:relative;z-index:1}
 
-/* â”€â”€ SECTION WRAPPER â”€â”€ */
+/* ── SECTION WRAPPER ── */
 .sec{padding:6rem 2rem;max-width:1160px;margin:0 auto}
 .sec-label{font-size:11px;letter-spacing:0.18em;text-transform:uppercase;color:var(--violet);margin-bottom:1rem;font-weight:300}
 .sec-title{
@@ -184,14 +184,14 @@ section{position:relative;z-index:1}
 .sec-title em{font-style:italic;color:var(--violet)}
 .sec-body{font-size:15px;font-weight:300;color:var(--muted);line-height:1.75;max-width:480px}
 
-/* â”€â”€ DEMO LAYOUT â”€â”€ */
+/* ── DEMO LAYOUT ── */
 .demo-grid{display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:center}
 @media(max-width:800px){.demo-grid{grid-template-columns:1fr}}
 .demo-perks{display:flex;flex-direction:column;gap:14px;margin-top:2rem}
 .perk{display:flex;align-items:flex-start;gap:12px;font-size:13px;font-weight:300;color:var(--muted)}
 .perk-icon{width:30px;height:30px;border-radius:8px;background:var(--surface);border:0.5px solid var(--border);display:flex;align-items:center;justify-content:center;font-size:14px;flex-shrink:0}
 
-/* â”€â”€ CHAT WIDGET â”€â”€ */
+/* ── CHAT WIDGET ── */
 .chat-box{
   background:var(--deep);border:0.5px solid var(--border-hi);
   border-radius:24px;overflow:hidden;
@@ -256,7 +256,7 @@ section{position:relative;z-index:1}
 .td:nth-child(2){animation-delay:.15s}.td:nth-child(3){animation-delay:.3s}
 @keyframes td{0%,80%,100%{opacity:0.2;transform:scale(0.7)}40%{opacity:1;transform:scale(1)}}
 
-/* â”€â”€ FEATURES â”€â”€ */
+/* ── FEATURES ── */
 .feat-grid{
   display:grid;grid-template-columns:repeat(3,1fr);
   gap:1px;background:var(--border);
@@ -272,7 +272,7 @@ section{position:relative;z-index:1}
 .feat h3{font-size:15px;font-weight:500;margin-bottom:6px}
 .feat p{font-size:13px;font-weight:300;color:var(--muted);line-height:1.6}
 
-/* â”€â”€ PAYMENT SECTION â”€â”€ */
+/* ── PAYMENT SECTION ── */
 .pay-section{padding:6rem 2rem;position:relative;z-index:1}
 .pay-section::before{
   content:'';position:absolute;inset:0;
@@ -320,7 +320,7 @@ section{position:relative;z-index:1}
 }
 .rtab.on{background:var(--violet);color:white;font-weight:500}
 
-/* â”€â”€ PLANS â”€â”€ */
+/* ── PLANS ── */
 .plans-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
 @media(max-width:650px){.plans-grid{grid-template-columns:1fr}}
 .plan{
@@ -339,8 +339,8 @@ section{position:relative;z-index:1}
 .plan-period{font-size:12px;font-weight:300;color:var(--ghost);margin-bottom:1.5rem}
 .plan-list{list-style:none;display:flex;flex-direction:column;gap:9px;margin-bottom:1.75rem}
 .plan-list li{font-size:13px;font-weight:300;color:var(--muted);padding-left:18px;position:relative}
-.plan-list li::before{content:'âœ¦';position:absolute;left:0;font-size:9px;color:var(--aurora);top:3px}
-.plan-list li.off{color:var(--ghost)}.plan-list li.off::before{color:var(--ghost);content:'â€“'}
+.plan-list li::before{content:'✦';position:absolute;left:0;font-size:9px;color:var(--aurora);top:3px}
+.plan-list li.off{color:var(--ghost)}.plan-list li.off::before{color:var(--ghost);content:'–'}
 .plan-btn2{
   width:100%;padding:12px;border-radius:14px;font-family:var(--ff-body);
   font-size:14px;font-weight:400;cursor:pointer;transition:all 0.2s;
@@ -349,7 +349,7 @@ section{position:relative;z-index:1}
 .plan.star .plan-btn2{background:var(--violet);border-color:var(--violet);color:white}
 .plan-btn2:hover{opacity:0.8}
 
-/* â”€â”€ MARKETS â”€â”€ */
+/* ── MARKETS ── */
 .markets-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:12px;margin-top:3rem}
 .mkt{
   background:var(--deep);border:0.5px solid var(--border);
@@ -362,7 +362,7 @@ section{position:relative;z-index:1}
 .mkt-price{font-family:var(--ff-display);font-size:22px;font-weight:300;color:var(--violet);margin-bottom:0.25rem}
 .mkt-note{font-size:11px;font-weight:300;color:var(--ghost)}
 
-/* â”€â”€ TESTIMONIALS â”€â”€ */
+/* ── TESTIMONIALS ── */
 .testi-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:14px;margin-top:3rem}
 .testi{background:var(--deep);border:0.5px solid var(--border);border-radius:18px;padding:1.75rem}
 .testi-quote{font-family:var(--ff-display);font-size:17px;font-weight:300;font-style:italic;line-height:1.65;margin-bottom:1.25rem;color:var(--text)}
@@ -371,7 +371,7 @@ section{position:relative;z-index:1}
 .ta-name{font-size:13px;font-weight:500}
 .ta-loc{font-size:11px;font-weight:300;color:var(--ghost)}
 
-/* â”€â”€ INSTALL BANNER â”€â”€ */
+/* ── INSTALL BANNER ── */
 .install-bar{
   background:linear-gradient(90deg,rgba(108,99,255,0.15),rgba(78,205,196,0.08));
   border:0.5px solid var(--border-hi);border-radius:16px;
@@ -390,7 +390,7 @@ section{position:relative;z-index:1}
 }
 .install-btn:hover{border-color:var(--violet);color:var(--violet)}
 
-/* â”€â”€ FINAL CTA â”€â”€ */
+/* ── FINAL CTA ── */
 .fcta{
   padding:7rem 2rem;text-align:center;position:relative;z-index:1;
   background:radial-gradient(ellipse 50% 40% at 50% 60%,rgba(108,99,255,0.1) 0%,transparent 70%);
@@ -400,7 +400,7 @@ section{position:relative;z-index:1}
 .fcta p{font-size:15px;font-weight:300;color:var(--muted);max-width:420px;margin:0 auto 2.5rem;line-height:1.75}
 .gdpr-note{font-size:11px;font-weight:300;color:var(--ghost);margin-top:1rem;display:flex;align-items:center;justify-content:center;gap:12px}
 
-/* â”€â”€ FOOTER â”€â”€ */
+/* ── FOOTER ── */
 footer{
   border-top:0.5px solid var(--border);
   padding:2.5rem 2rem;position:relative;z-index:1;
@@ -421,7 +421,7 @@ footer{
 .footer-clinic a{color:var(--violet);text-decoration:none}
 .footer-clinic a:hover{text-decoration:underline}
 
-/* â”€â”€ ABOUT â”€â”€ */
+/* ── ABOUT ── */
 .about-grid{display:grid;grid-template-columns:1fr 1fr;gap:3rem;max-width:1160px;margin:0 auto;align-items:start}
 @media(max-width:800px){.about-grid{grid-template-columns:1fr}}
 .about-card{display:flex;align-items:center;gap:12px;margin:1.5rem 0}
@@ -441,7 +441,7 @@ footer{
 .contact-item a:hover{color:var(--violet)}
 .contact-email{color:var(--ghost);font-style:italic}
 
-/* â”€â”€ FAQ â”€â”€ */
+/* ── FAQ ── */
 .faq-card{background:var(--card);border:0.5px solid var(--border);border-radius:20px;padding:1.75rem}
 .faq-card h3{font-family:var(--ff-display);font-size:22px;font-weight:400;margin-bottom:1.25rem}
 .faq-item{border-bottom:0.5px solid var(--border);cursor:pointer;padding:0.875rem 0}
@@ -452,11 +452,11 @@ footer{
 .faq-item.open .faq-a{max-height:200px;padding-top:0.75rem}
 .faq-item.open .faq-q span{transform:rotate(45deg)}
 
-/* â”€â”€ SOCIAL â”€â”€ */
+/* ── SOCIAL ── */
 .social-icon{font-size:20px;text-decoration:none;transition:transform 0.2s;display:inline-block}
 .social-icon:hover{transform:scale(1.2)}
 
-/* â”€â”€ COOKIES BANNER â”€â”€ */
+/* ── COOKIES BANNER ── */
 .cookies-banner{
   position:fixed;bottom:0;left:0;right:0;z-index:999;
   background:var(--surface);border-top:0.5px solid var(--border-hi);
@@ -473,7 +473,7 @@ footer{
 .cookies-decline{padding:8px 20px;border-radius:20px;background:none;border:0.5px solid var(--border-hi);color:var(--muted);font-family:var(--ff-body);font-size:12px;cursor:pointer;transition:all 0.2s}
 .cookies-decline:hover{border-color:var(--violet);color:var(--violet)}
 
-/* â”€â”€ LEGAL MODAL â”€â”€ */
+/* ── LEGAL MODAL ── */
 .legal-modal{background:var(--deep);border:0.5px solid var(--border-hi);border-radius:26px;width:100%;max-width:600px;max-height:85vh;overflow:hidden;display:flex;flex-direction:column}
 .legal-head{padding:1.25rem 1.5rem;border-bottom:0.5px solid var(--border);display:flex;justify-content:space-between;align-items:center;flex-shrink:0}
 .legal-head h3{font-family:var(--ff-display);font-size:22px;font-weight:400}
@@ -482,7 +482,7 @@ footer{
 .legal-body h4:first-child{margin-top:0}
 .legal-body p{margin-bottom:0.75rem}
 
-/* â”€â”€ BLOG â”€â”€ */
+/* ── BLOG ── */
 .blog-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:1.5rem;max-width:1160px;margin:0 auto}
 .blog-card{
   background:var(--card);border:0.5px solid var(--border);border-radius:20px;
@@ -516,7 +516,7 @@ footer{
 }
 .blog-read:hover{border-color:var(--violet);color:var(--violet)}
 
-/* â”€â”€ MODALS â”€â”€ */
+/* ── MODALS ── */
 .overlay{
   position:fixed;inset:0;z-index:500;
   background:rgba(0,0,0,0.88);backdrop-filter:blur(16px);
@@ -560,7 +560,7 @@ footer{
 .am-in:focus{border-color:var(--violet)}
 .am-disc{padding:0.5rem 1.25rem 0.75rem;font-size:10px;font-weight:300;color:var(--ghost);text-align:center;flex-shrink:0}
 
-/* â”€â”€ HISTORY PANEL â”€â”€ */
+/* ── HISTORY PANEL ── */
 .history-toggle{
   background:none;border:0.5px solid var(--border);border-radius:8px;
   color:var(--muted);cursor:pointer;padding:4px 8px;font-size:14px;
@@ -580,7 +580,7 @@ footer{
 .history-msg span{color:var(--ghost);font-size:10px;margin-left:6px}
 .history-empty{font-size:12px;color:var(--ghost);text-align:center;padding:1rem}
 
-/* â”€â”€ CRISIS MODAL â”€â”€ */
+/* ── CRISIS MODAL ── */
 .crisis-modal{
   background:var(--deep);border:0.5px solid rgba(255,100,100,0.3);
   border-radius:26px;width:100%;max-width:420px;overflow:hidden;
@@ -617,7 +617,7 @@ footer{
 }
 .crisis-close:hover{border-color:var(--violet);color:var(--violet)}
 
-/* â”€â”€ NEWSLETTER â”€â”€ */
+/* ── NEWSLETTER ── */
 .newsletter-section{
   padding:5rem 2rem;position:relative;z-index:1;
   background:linear-gradient(135deg,rgba(108,99,255,0.08) 0%,rgba(78,205,196,0.05) 100%);
@@ -644,13 +644,13 @@ footer{
 .newsletter-success{display:none;color:var(--aurora);font-size:14px;margin-top:1rem}
 .newsletter-note{font-size:11px;color:var(--ghost);margin-top:1rem}
 
-/* â”€â”€ WHATSAPP FLOAT â”€â”€ */
+/* ── WHATSAPP FLOAT ── */
 .wa-float{position:fixed;bottom:2rem;right:2rem;z-index:998;width:54px;height:54px;border-radius:50%;background:#25D366;display:flex;align-items:center;justify-content:center;color:white;text-decoration:none;box-shadow:0 4px 20px rgba(37,211,102,0.4);transition:all 0.3s;animation:wa-bounce 2s infinite}
 .wa-float:hover{transform:scale(1.1);box-shadow:0 6px 30px rgba(37,211,102,0.6)}
 .wa-float svg{width:28px;height:28px;fill:white}
 @keyframes wa-bounce{0%,100%{transform:translateY(0)}50%{transform:translateY(-6px)}}
 
-/* â”€â”€ VOICE BUTTON â”€â”€ */
+/* ── VOICE BUTTON ── */
 .voice-btn{
   display:inline-flex;align-items:center;gap:5px;
   margin-top:5px;padding:4px 10px;border-radius:20px;
@@ -753,12 +753,12 @@ footer{
   </a>
   <div class="nav-center">
     <button class="nav-link" onclick="document.getElementById('demo').scrollIntoView({behavior:'smooth'})">Demo</button>
-    <button class="nav-link" onclick="document.getElementById('payments').scrollIntoView({behavior:'smooth'})">PreÈ›uri</button>
+    <button class="nav-link" onclick="document.getElementById('payments').scrollIntoView({behavior:'smooth'})">Prețuri</button>
     <button class="nav-link" onclick="document.getElementById('markets').scrollIntoView({behavior:'smooth'})">Diaspora</button>
-    <button class="nav-link" onclick="document.getElementById('despre').scrollIntoView({behavior:'smooth'})">ðŸ‘¤ Despre</button>
-    <button class="nav-link" onclick="document.getElementById('blog').scrollIntoView({behavior:'smooth'})">âœï¸ GÃ¢ndul zilei</button>
-    <button class="nav-link" onclick="document.getElementById('newsletter').scrollIntoView({behavior:'smooth'})">ðŸ“© Newsletter</button>
-    <button class="nav-link" onclick="openInstall()">ðŸ“± InstaleazÄƒ</button>
+    <button class="nav-link" onclick="document.getElementById('despre').scrollIntoView({behavior:'smooth'})">👤 Despre</button>
+    <button class="nav-link" onclick="document.getElementById('blog').scrollIntoView({behavior:'smooth'})">✍️ Gândul zilei</button>
+    <button class="nav-link" onclick="document.getElementById('newsletter').scrollIntoView({behavior:'smooth'})">📩 Newsletter</button>
+    <button class="nav-link" onclick="openInstall()">📱 Instalează</button>
   </div>
   <div class="nav-right">
     <div class="lang-set">
@@ -766,7 +766,7 @@ footer{
       <button class="lp" onclick="setLang('en',this)">EN</button>
       <button class="lp" onclick="setLang('es',this)">ES</button>
     </div>
-    <button class="nav-cta" onclick="openApp()">Gratuit â†’</button>
+    <button class="nav-cta" onclick="openApp()">Gratuit →</button>
   </div>
 </nav>
 
@@ -774,34 +774,34 @@ footer{
 <section class="hero">
   <div class="hero-pill">
     <span class="pulse-dot"></span>
-    <span id="h-pill">Disponibil 24/7 Â· Cabinet virtual Â· 6 È›Äƒri</span>
+    <span id="h-pill">Disponibil 24/7 · Cabinet virtual · 6 țări</span>
   </div>
-  <h1 class="hero-eyebrow" id="h-title">Nu eÈ™ti<br><em>singur</em><br>niciodatÄƒ.</h1>
-  <p class="hero-sub2" id="h-sub">Un spaÈ›iu sigur unde gÃ¢ndurile tale conteazÄƒ. Suport emoÈ›ional AI pentru anxietate, bucuria cÄƒsniciei, dependenÈ›e È™i armonie sexualÄƒ. ConfidenÈ›ial, empatic, disponibil la 3 dimineaÈ›a.</p>
+  <h1 class="hero-eyebrow" id="h-title">Nu ești<br><em>singur</em><br>niciodată.</h1>
+  <p class="hero-sub2" id="h-sub">Un spațiu sigur unde gândurile tale contează. Suport emoțional AI pentru anxietate, bucuria căsniciei, dependențe și armonie sexuală. Confidențial, empatic, disponibil la 3 dimineața.</p>
   <div class="hero-actions">
-    <button class="btn-primary" id="h-cta" onclick="openApp()">ÃŽncearcÄƒ gratuit â†’</button>
-    <button class="btn-outline" id="h-cta2" onclick="openPayModal()">Vezi preÈ›urile</button>
+    <button class="btn-primary" id="h-cta" onclick="openApp()">Încearcă gratuit →</button>
+    <button class="btn-outline" id="h-cta2" onclick="openPayModal()">Vezi prețurile</button>
   </div>
   <div class="flag-row">
-    <span class="flag-chip">ðŸ‡·ðŸ‡´ RomÃ¢nia</span>
-    <span class="flag-chip">ðŸ‡¬ðŸ‡§ UK</span>
-    <span class="flag-chip">ðŸ‡ªðŸ‡¸ Spania</span>
-    <span class="flag-chip">ðŸ‡«ðŸ‡· FranÈ›a</span>
-    <span class="flag-chip">ðŸ‡¦ðŸ‡º Australia</span>
-    <span class="flag-chip">ðŸ‡¨ðŸ‡¦ Canada</span>
+    <span class="flag-chip">🇷🇴 România</span>
+    <span class="flag-chip">🇬🇧 UK</span>
+    <span class="flag-chip">🇪🇸 Spania</span>
+    <span class="flag-chip">🇫🇷 Franța</span>
+    <span class="flag-chip">🇦🇺 Australia</span>
+    <span class="flag-chip">🇨🇦 Canada</span>
   </div>
 </section>
 
 <!-- INSTALL BANNER -->
 <div class="install-bar" id="install-banner">
   <div class="install-info">
-    <h4>ðŸ“± InstaleazÄƒ Noctis pe telefonul tÄƒu</h4>
-    <p>FuncÈ›ioneazÄƒ ca o aplicaÈ›ie nativÄƒ â€” fÄƒrÄƒ App Store, gratuit</p>
+    <h4>📱 Instalează Noctis pe telefonul tău</h4>
+    <p>Funcționează ca o aplicație nativă — fără App Store, gratuit</p>
   </div>
   <div class="install-btns">
-    <button class="install-btn" onclick="openInstall('ios')">ðŸŽ iPhone / iPad</button>
-    <button class="install-btn" onclick="openInstall('android')">ðŸ¤– Android</button>
-    <button class="install-btn" onclick="openInstall('desktop')">ðŸ’» Laptop / PC</button>
+    <button class="install-btn" onclick="openInstall('ios')">🍎 iPhone / iPad</button>
+    <button class="install-btn" onclick="openInstall('android')">🤖 Android</button>
+    <button class="install-btn" onclick="openInstall('desktop')">💻 Laptop / PC</button>
   </div>
 </div>
 
@@ -812,43 +812,43 @@ footer{
   <div class="demo-grid">
     <div>
       <div class="sec-label" id="d-label">Demo live</div>
-      <h2 class="sec-title" id="d-title">VorbeÈ™te cu<br><em>Noctis</em> acum</h2>
-      <p class="sec-body" id="d-body">FÄƒrÄƒ programare, fÄƒrÄƒ judecatÄƒ. Scrii ce simÈ›i, primeÈ™ti rÄƒspuns imediat de la un AI specializat pe psihologie clinicÄƒ.</p>
+      <h2 class="sec-title" id="d-title">Vorbește cu<br><em>Noctis</em> acum</h2>
+      <p class="sec-body" id="d-body">Fără programare, fără judecată. Scrii ce simți, primești răspuns imediat de la un AI specializat pe psihologie clinică.</p>
       <div class="demo-perks">
-        <div class="perk"><div class="perk-icon">âš¡</div>RÄƒspuns Ã®n sub 3 secunde, oricÃ¢nd</div>
-        <div class="perk"><div class="perk-icon">ðŸ”’</div>ConversaÈ›ii 100% confidenÈ›iale</div>
-        <div class="perk"><div class="perk-icon">ðŸŒ</div>RomÃ¢nÄƒ, englezÄƒ sau spaniolÄƒ</div>
-        <div class="perk"><div class="perk-icon">ðŸ§ </div>Antrenat pe psihologie clinicÄƒ</div>
+        <div class="perk"><div class="perk-icon">⚡</div>Răspuns în sub 3 secunde, oricând</div>
+        <div class="perk"><div class="perk-icon">🔒</div>Conversații 100% confidențiale</div>
+        <div class="perk"><div class="perk-icon">🌍</div>Română, engleză sau spaniolă</div>
+        <div class="perk"><div class="perk-icon">🧠</div>Antrenat pe psihologie clinică</div>
       </div>
     </div>
     <div class="chat-box">
       <div class="chat-top">
         <div class="chat-agent">
-          <div class="agent-orb">ðŸ§ </div>
+          <div class="agent-orb">🧠</div>
           <div>
             <div class="agent-name">Noctis</div>
             <div class="agent-status">online acum</div>
           </div>
         </div>
-        <div class="chat-secure">ðŸ”’ criptat</div>
+        <div class="chat-secure">🔒 criptat</div>
       </div>
       <div class="chat-msgs" id="demo-msgs">
         <div>
-          <div class="bubble ai" id="demo-first">BunÄƒ. Sunt Noctis â€” un spaÈ›iu sigur pentru tine. Ce te aduce azi?</div>
+          <div class="bubble ai" id="demo-first">Bună. Sunt Noctis — un spațiu sigur pentru tine. Ce te aduce azi?</div>
           <div class="btime">acum</div>
         </div>
       </div>
       <div class="topic-chips" id="demo-chips">
-        <span class="tchip" onclick="demoTopic('MÄƒ simt anxios')">ðŸ˜° Anxietate</span>
-        <span class="tchip" onclick="demoTopic('Bucuria cÄƒsniciei')">ðŸ’ Bucuria cÄƒsniciei</span>
-        <span class="tchip" onclick="demoTopic('SingurÄƒtate Ã®n doi')">ðŸ’” SingurÄƒtate Ã®n doi</span>
-        <span class="tchip" onclick="demoTopic('RÄƒni sufleteÈ™ti')">ðŸŒªï¸ RÄƒni sufleteÈ™ti</span>
-        <span class="tchip" onclick="demoTopic('DependenÈ›Äƒ')">ðŸ”„ DependenÈ›e</span>
-        <span class="tchip" onclick="demoTopic('Armonie sexualÄƒ')">ðŸŒ¸ Armonie sexualÄƒ</span>
-        <span class="tchip" onclick="demoTopic('Vreau doar sÄƒ vorbesc cu cineva')">ðŸ’¬ Vreau sÄƒ vorbesc</span>
+        <span class="tchip" onclick="demoTopic('Mă simt anxios')">😰 Anxietate</span>
+        <span class="tchip" onclick="demoTopic('Bucuria căsniciei')">💍 Bucuria căsniciei</span>
+        <span class="tchip" onclick="demoTopic('Singurătate în doi')">💔 Singurătate în doi</span>
+        <span class="tchip" onclick="demoTopic('Răni sufletești')">🌪️ Răni sufletești</span>
+        <span class="tchip" onclick="demoTopic('Dependență')">🔄 Dependențe</span>
+        <span class="tchip" onclick="demoTopic('Armonie sexuală')">🌸 Armonie sexuală</span>
+        <span class="tchip" onclick="demoTopic('Vreau doar să vorbesc cu cineva')">💬 Vreau să vorbesc</span>
       </div>
       <div class="chat-bottom">
-        <input class="chat-in" id="demo-in" placeholder="Scrie ce simÈ›i..." onkeydown="if(event.key==='Enter')demoSend()"/>
+        <input class="chat-in" id="demo-in" placeholder="Scrie ce simți..." onkeydown="if(event.key==='Enter')demoSend()"/>
         <button class="send" onclick="demoSend()"><svg viewBox="0 0 24 24"><path d="M2 21l21-9L2 3v7l15 2-15 2z"/></svg></button>
       </div>
     </div>
@@ -862,12 +862,12 @@ footer{
   <div class="sec-label">De ce Noctis</div>
   <h2 class="sec-title">Conceput pentru<br><em>momentele dificile</em></h2>
   <div class="feat-grid">
-    <div class="feat"><div class="feat-num">01</div><h3>Disponibil la 3 noaptea</h3><p>Criza nu se anunÈ›Äƒ. Noctis e prezent cÃ¢nd niciun cabinet nu e deschis, indiferent de fus orar.</p></div>
-    <div class="feat"><div class="feat-num">02</div><h3>Total confidenÈ›ial</h3><p>Nicio Ã®nregistrare permanentÄƒ. PoÈ›i spune lucruri pe care nu le-ai spune nimÄƒnui altcuiva.</p></div>
-    <div class="feat"><div class="feat-num">03</div><h3>RomÃ¢nÄƒ oriunde</h3><p>Londra, Madrid, Sydney â€” Noctis vorbeÈ™te limba ta È™i Ã®nÈ›elege contextul cultural romÃ¢nesc.</p></div>
-    <div class="feat"><div class="feat-num">04</div><h3>SpaÈ›iu sigur</h3><p>Anxietate, bucuria cÄƒsniciei, dependenÈ›e È™i armonie sexualÄƒ â€” abordate cu cÄƒldurÄƒ, fÄƒrÄƒ judecatÄƒ, de specialiÈ™ti.</p></div>
-    <div class="feat"><div class="feat-num">05</div><h3>PlatÄƒ simplÄƒ</h3><p>Revolut, card, Apple Pay sau transfer bancar. Abonament lunar, anulezi oricÃ¢nd, fÄƒrÄƒ penalitÄƒÈ›i.</p></div>
-    <div class="feat"><div class="feat-num">06</div><h3>Jurnal de progres</h3><p>UrmÄƒreÈ™ti evoluÈ›ia Ã®n timp. Identifici pattern-uri, trigger-i È™i observi progresul real.</p></div>
+    <div class="feat"><div class="feat-num">01</div><h3>Disponibil la 3 noaptea</h3><p>Criza nu se anunță. Noctis e prezent când niciun cabinet nu e deschis, indiferent de fus orar.</p></div>
+    <div class="feat"><div class="feat-num">02</div><h3>Total confidențial</h3><p>Nicio înregistrare permanentă. Poți spune lucruri pe care nu le-ai spune nimănui altcuiva.</p></div>
+    <div class="feat"><div class="feat-num">03</div><h3>Română oriunde</h3><p>Londra, Madrid, Sydney — Noctis vorbește limba ta și înțelege contextul cultural românesc.</p></div>
+    <div class="feat"><div class="feat-num">04</div><h3>Spațiu sigur</h3><p>Anxietate, bucuria căsniciei, dependențe și armonie sexuală — abordate cu căldură, fără judecată, de specialiști.</p></div>
+    <div class="feat"><div class="feat-num">05</div><h3>Plată simplă</h3><p>Revolut, card, Apple Pay sau transfer bancar. Abonament lunar, anulezi oricând, fără penalități.</p></div>
+    <div class="feat"><div class="feat-num">06</div><h3>Jurnal de progres</h3><p>Urmărești evoluția în timp. Identifici pattern-uri, trigger-i și observi progresul real.</p></div>
   </div>
 </section>
 
@@ -878,17 +878,17 @@ footer{
   <div class="pay-inner">
     <div class="pay-title-row">
       <div>
-        <div class="sec-label">PreÈ›uri & PlÄƒÈ›i</div>
-        <h2 class="sec-title">Transparent,<br><em>fÄƒrÄƒ surprize</em></h2>
+        <div class="sec-label">Prețuri & Plăți</div>
+        <h2 class="sec-title">Transparent,<br><em>fără surprize</em></h2>
       </div>
-      <p style="font-size:14px;font-weight:300;color:var(--muted);max-width:320px;line-height:1.7">Toate preÈ›urile includ TVA. Anulezi oricÃ¢nd din cont, fÄƒrÄƒ justificÄƒri.</p>
+      <p style="font-size:14px;font-weight:300;color:var(--muted);max-width:320px;line-height:1.7">Toate prețurile includ TVA. Anulezi oricând din cont, fără justificări.</p>
     </div>
 
     <!-- Region Toggle -->
     <div class="region-tabs">
-      <button class="rtab on" onclick="setRegion('ro',this)">ðŸ‡·ðŸ‡´ RomÃ¢nia</button>
-      <button class="rtab" onclick="setRegion('eu',this)">ðŸŒ UK / Europa</button>
-      <button class="rtab" onclick="setRegion('au',this)">ðŸŒ AU / CA</button>
+      <button class="rtab on" onclick="setRegion('ro',this)">🇷🇴 România</button>
+      <button class="rtab" onclick="setRegion('eu',this)">🌍 UK / Europa</button>
+      <button class="rtab" onclick="setRegion('au',this)">🌏 AU / CA</button>
     </div>
 
     <!-- Plans -->
@@ -896,7 +896,7 @@ footer{
 
     <!-- Payment Methods -->
     <div style="margin-top:3rem">
-      <div class="sec-label" style="margin-bottom:1.5rem">Metode de platÄƒ acceptate</div>
+      <div class="sec-label" style="margin-bottom:1.5rem">Metode de plată acceptate</div>
       <div class="pay-grid" id="pay-methods-grid"></div>
     </div>
   </div>
@@ -906,16 +906,16 @@ footer{
 
 <!-- MARKETS -->
 <section class="sec" id="markets">
-  <div class="sec-label">PieÈ›e internaÈ›ionale</div>
-  <h2 class="sec-title">3.5 milioane de romÃ¢ni<br><em>Ã®n diaspora</em></h2>
-  <p class="sec-body">Fiecare piaÈ›Äƒ are propriul preÈ›, metodÄƒ de platÄƒ È™i mesaj adaptat. O singurÄƒ platformÄƒ, È™ase pieÈ›e.</p>
+  <div class="sec-label">Piețe internaționale</div>
+  <h2 class="sec-title">3.5 milioane de români<br><em>în diaspora</em></h2>
+  <p class="sec-body">Fiecare piață are propriul preț, metodă de plată și mesaj adaptat. O singură platformă, șase piețe.</p>
   <div class="markets-grid">
-    <div class="mkt"><div class="mkt-flag">ðŸ‡·ðŸ‡´</div><h3>RomÃ¢nia</h3><div class="mkt-pop">15M Â· Gen Z + Millennials</div><div class="mkt-price">49 RON<span style="font-family:var(--ff-body);font-size:13px;color:var(--muted)">/lunÄƒ</span></div><div class="mkt-note">Card Â· PayU Â· Revolut Â· Transfer bancar</div></div>
-    <div class="mkt"><div class="mkt-flag">ðŸ‡¬ðŸ‡§</div><h3>United Kingdom</h3><div class="mkt-pop">~500K romÃ¢ni Â· NHS waitlist 18 luni</div><div class="mkt-price">Â£9<span style="font-family:var(--ff-body);font-size:13px;color:var(--muted)">/month</span></div><div class="mkt-note">Revolut Â· Stripe Â· Apple Pay Â· Google Pay</div></div>
-    <div class="mkt"><div class="mkt-flag">ðŸ‡ªðŸ‡¸</div><h3>EspaÃ±a</h3><div class="mkt-pop">~1M romÃ¢ni Â· barierÄƒ lingvisticÄƒ</div><div class="mkt-price">â‚¬9<span style="font-family:var(--ff-body);font-size:13px;color:var(--muted)">/mes</span></div><div class="mkt-note">Revolut Â· Bizum Â· Stripe Â· Apple Pay</div></div>
-    <div class="mkt"><div class="mkt-flag">ðŸ‡«ðŸ‡·</div><h3>France</h3><div class="mkt-pop">~130K romÃ¢ni Â· psiholog 80â‚¬/È™edinÈ›Äƒ</div><div class="mkt-price">â‚¬9<span style="font-family:var(--ff-body);font-size:13px;color:var(--muted)">/mois</span></div><div class="mkt-note">Revolut Â· Stripe Â· Lydia Â· Apple Pay</div></div>
-    <div class="mkt"><div class="mkt-flag">ðŸ‡¦ðŸ‡º</div><h3>Australia</h3><div class="mkt-pop">~25K romÃ¢ni Â· fus orar +9h faÈ›Äƒ de RO</div><div class="mkt-price">A$15<span style="font-family:var(--ff-body);font-size:13px;color:var(--muted)">/month</span></div><div class="mkt-note">Revolut Â· Stripe Â· PayID Â· Apple Pay</div></div>
-    <div class="mkt"><div class="mkt-flag">ðŸ‡¨ðŸ‡¦</div><h3>Canada</h3><div class="mkt-pop">~200K romÃ¢ni Â· waitlist sÄƒnÄƒtate</div><div class="mkt-price">C$13<span style="font-family:var(--ff-body);font-size:13px;color:var(--muted)">/month</span></div><div class="mkt-note">Revolut Â· Stripe Â· Interac Â· Apple Pay</div></div>
+    <div class="mkt"><div class="mkt-flag">🇷🇴</div><h3>România</h3><div class="mkt-pop">15M · Gen Z + Millennials</div><div class="mkt-price">49 RON<span style="font-family:var(--ff-body);font-size:13px;color:var(--muted)">/lună</span></div><div class="mkt-note">Card · PayU · Revolut · Transfer bancar</div></div>
+    <div class="mkt"><div class="mkt-flag">🇬🇧</div><h3>United Kingdom</h3><div class="mkt-pop">~500K români · NHS waitlist 18 luni</div><div class="mkt-price">£9<span style="font-family:var(--ff-body);font-size:13px;color:var(--muted)">/month</span></div><div class="mkt-note">Revolut · Stripe · Apple Pay · Google Pay</div></div>
+    <div class="mkt"><div class="mkt-flag">🇪🇸</div><h3>España</h3><div class="mkt-pop">~1M români · barieră lingvistică</div><div class="mkt-price">€9<span style="font-family:var(--ff-body);font-size:13px;color:var(--muted)">/mes</span></div><div class="mkt-note">Revolut · Bizum · Stripe · Apple Pay</div></div>
+    <div class="mkt"><div class="mkt-flag">🇫🇷</div><h3>France</h3><div class="mkt-pop">~130K români · psiholog 80€/ședință</div><div class="mkt-price">€9<span style="font-family:var(--ff-body);font-size:13px;color:var(--muted)">/mois</span></div><div class="mkt-note">Revolut · Stripe · Lydia · Apple Pay</div></div>
+    <div class="mkt"><div class="mkt-flag">🇦🇺</div><h3>Australia</h3><div class="mkt-pop">~25K români · fus orar +9h față de RO</div><div class="mkt-price">A$15<span style="font-family:var(--ff-body);font-size:13px;color:var(--muted)">/month</span></div><div class="mkt-note">Revolut · Stripe · PayID · Apple Pay</div></div>
+    <div class="mkt"><div class="mkt-flag">🇨🇦</div><h3>Canada</h3><div class="mkt-pop">~200K români · waitlist sănătate</div><div class="mkt-price">C$13<span style="font-family:var(--ff-body);font-size:13px;color:var(--muted)">/month</span></div><div class="mkt-note">Revolut · Stripe · Interac · Apple Pay</div></div>
   </div>
 </section>
 
@@ -927,33 +927,33 @@ footer{
   <h2 class="sec-title">Ce spun<br><em>utilizatorii</em></h2>
   <div class="testi-grid">
     <div class="testi">
-      <div class="testi-quote">"La 2 noaptea Ã®n Londra, cu atac de panicÄƒ â€” Noctis m-a ajutat sÄƒ respir. Nu mai eram singurÄƒ."</div>
-      <div class="testi-author"><div class="ta-av">AM</div><div><div class="ta-name">Ana M.</div><div class="ta-loc">ðŸ‡¬ðŸ‡§ Londra</div></div></div>
+      <div class="testi-quote">"La 2 noaptea în Londra, cu atac de panică — Noctis m-a ajutat să respir. Nu mai eram singură."</div>
+      <div class="testi-author"><div class="ta-av">AM</div><div><div class="ta-name">Ana M.</div><div class="ta-loc">🇬🇧 Londra</div></div></div>
     </div>
     <div class="testi">
-      <div class="testi-quote">"Eram Ã®n Spania, nu vorbeam suficient spaniolÄƒ ca sÄƒ merg la un psiholog. Cu Noctis am vorbit Ã®n romÃ¢nÄƒ."</div>
-      <div class="testi-author"><div class="ta-av">DC</div><div><div class="ta-name">Dan C.</div><div class="ta-loc">ðŸ‡ªðŸ‡¸ Madrid</div></div></div>
+      <div class="testi-quote">"Eram în Spania, nu vorbeam suficient spaniolă ca să merg la un psiholog. Cu Noctis am vorbit în română."</div>
+      <div class="testi-author"><div class="ta-av">DC</div><div><div class="ta-name">Dan C.</div><div class="ta-loc">🇪🇸 Madrid</div></div></div>
     </div>
     <div class="testi">
-      <div class="testi-quote">"Eu È™i soÈ›ia mea l-am folosit Ã®nainte de a merge la terapeut. Ne-a ajutat sÄƒ punem Ã®n cuvinte ce simÈ›eam."</div>
-      <div class="testi-author"><div class="ta-av">RB</div><div><div class="ta-name">Radu B.</div><div class="ta-loc">ðŸ‡·ðŸ‡´ Cluj</div></div></div>
+      <div class="testi-quote">"Eu și soția mea l-am folosit înainte de a merge la terapeut. Ne-a ajutat să punem în cuvinte ce simțeam."</div>
+      <div class="testi-author"><div class="ta-av">RB</div><div><div class="ta-name">Radu B.</div><div class="ta-loc">🇷🇴 Cluj</div></div></div>
     </div>
   </div>
 </section>
 
 <div class="divider"></div>
 
-<!-- GÃ‚NDUL ZILEI -->
+<!-- GÂNDUL ZILEI -->
 <section class="sec" id="blog">
-  <div class="sec-label">GÃ¢ndul zilei</div>
-  <h2 class="sec-title">ReflecÈ›ii din<br><em>cabinet</em></h2>
-  <p class="sec-body" style="margin-bottom:2.5rem">GÃ¢nduri despre anxietate, relaÈ›ii, echilibru interior â€” scrise sÄƒptÄƒmÃ¢nal de Psihologul Noctis.</p>
+  <div class="sec-label">Gândul zilei</div>
+  <h2 class="sec-title">Reflecții din<br><em>cabinet</em></h2>
+  <p class="sec-body" style="margin-bottom:2.5rem">Gânduri despre anxietate, relații, echilibru interior — scrise săptămânal de Psihologul Noctis.</p>
   <div class="blog-grid" id="blog-grid">
 
     <article class="blog-card">
-      <div class="blog-tag">Bucuria cÄƒsniciei</div>
-      <h3 class="blog-title">RelaÈ›iile extraconjugale nu sunt niciodatÄƒ doar despre celÄƒlalt</h3>
-      <p class="blog-excerpt">ÃŽn 35 de ani de practicÄƒ, am vÄƒzut cÄƒ o relaÈ›ie extraconjugalÄƒ nu e niciodatÄƒ doar despre celÄƒlalt. E Ã®ntotdeauna despre ceva care lipseÈ™te â€” uneori Ã®n relaÈ›ie, uneori Ã®n noi Ã®nÈ™ine. ÃŽntrebarea adevÄƒratÄƒ nu e "de ce a fÄƒcut-o?" ci "ce nu am vÄƒzut?"</p>
+      <div class="blog-tag">Bucuria căsniciei</div>
+      <h3 class="blog-title">Relațiile extraconjugale nu sunt niciodată doar despre celălalt</h3>
+      <p class="blog-excerpt">În 35 de ani de practică, am văzut că o relație extraconjugală nu e niciodată doar despre celălalt. E întotdeauna despre ceva care lipsește — uneori în relație, uneori în noi înșine. Întrebarea adevărată nu e "de ce a făcut-o?" ci "ce nu am văzut?"</p>
       <div class="blog-footer">
         <div class="blog-author">
           <div class="blog-av">PN</div>
@@ -962,14 +962,14 @@ footer{
             <div class="blog-date">18 aprilie 2026</div>
           </div>
         </div>
-        <button class="blog-read" onclick="openApp()">DiscutÄƒ cu Noctis â†’</button>
+        <button class="blog-read" onclick="openApp()">Discută cu Noctis →</button>
       </div>
     </article>
 
     <article class="blog-card">
       <div class="blog-tag">Anxietate</div>
-      <h3 class="blog-title">De ce romÃ¢nii nu merg la psiholog â€” È™i ce se Ã®ntÃ¢mplÄƒ cu durerea nerostitÄƒ</h3>
-      <p class="blog-excerpt">RuÈ™inea e primul obstacol. MulÈ›i vin la mine dupÄƒ ani de zile Ã®n care au purtat singuri poveÈ™ti grele. Anxietatea nu dispare dacÄƒ o ignorÄƒm â€” ea creÈ™te Ã®n tÄƒcere. Primul pas nu trebuie sÄƒ fie spectaculos. Uneori e suficient sÄƒ recunoÈ™ti cÄƒ ceva doare.</p>
+      <h3 class="blog-title">De ce românii nu merg la psiholog — și ce se întâmplă cu durerea nerostită</h3>
+      <p class="blog-excerpt">Rușinea e primul obstacol. Mulți vin la mine după ani de zile în care au purtat singuri povești grele. Anxietatea nu dispare dacă o ignorăm — ea crește în tăcere. Primul pas nu trebuie să fie spectaculos. Uneori e suficient să recunoști că ceva doare.</p>
       <div class="blog-footer">
         <div class="blog-author">
           <div class="blog-av">PN</div>
@@ -978,14 +978,14 @@ footer{
             <div class="blog-date">15 aprilie 2026</div>
           </div>
         </div>
-        <button class="blog-read" onclick="openApp()">DiscutÄƒ cu Noctis â†’</button>
+        <button class="blog-read" onclick="openApp()">Discută cu Noctis →</button>
       </div>
     </article>
 
     <article class="blog-card">
-      <div class="blog-tag">Armonie sexualÄƒ</div>
-      <h3 class="blog-title">Intimitatea nu Ã®nseamnÄƒ doar sex â€” Ã®nseamnÄƒ sÄƒ fii vÄƒzut cu adevÄƒrat</h3>
-      <p class="blog-excerpt">Cei mai mulÈ›i oameni confundÄƒ armonia sexualÄƒ cu performanÈ›a. De fapt, ea Ã®ncepe mult mai devreme â€” cu siguranÈ›a de a fi vulnerabil lÃ¢ngÄƒ partenerul tÄƒu. CÃ¢nd comunicarea dispare din dormitor, ea a dispÄƒrut de mult din alte locuri.</p>
+      <div class="blog-tag">Armonie sexuală</div>
+      <h3 class="blog-title">Intimitatea nu înseamnă doar sex — înseamnă să fii văzut cu adevărat</h3>
+      <p class="blog-excerpt">Cei mai mulți oameni confundă armonia sexuală cu performanța. De fapt, ea începe mult mai devreme — cu siguranța de a fi vulnerabil lângă partenerul tău. Când comunicarea dispare din dormitor, ea a dispărut de mult din alte locuri.</p>
       <div class="blog-footer">
         <div class="blog-author">
           <div class="blog-av">PN</div>
@@ -994,7 +994,7 @@ footer{
             <div class="blog-date">12 aprilie 2026</div>
           </div>
         </div>
-        <button class="blog-read" onclick="openApp()">DiscutÄƒ cu Noctis â†’</button>
+        <button class="blog-read" onclick="openApp()">Discută cu Noctis →</button>
       </div>
     </article>
 
@@ -1004,16 +1004,16 @@ footer{
 <!-- FINAL CTA -->
 <section class="fcta">
   <h2 id="fc-title">Primul pas<br><em>e gratuit.</em></h2>
-  <p id="fc-sub">FÄƒrÄƒ card, fÄƒrÄƒ programare. Deschizi aplicaÈ›ia È™i vorbeÈ™ti. AtÃ¢t.</p>
-  <button class="btn-primary" style="font-size:16px;padding:16px 40px" onclick="openApp()">ÃŽncearcÄƒ Noctis gratuit â†’</button>
+  <p id="fc-sub">Fără card, fără programare. Deschizi aplicația și vorbești. Atât.</p>
+  <button class="btn-primary" style="font-size:16px;padding:16px 40px" onclick="openApp()">Încearcă Noctis gratuit →</button>
   <div class="gdpr-note">
-    <span>ðŸ”’ SSL / HTTPS</span>
-    <span>Â·</span>
+    <span>🔒 SSL / HTTPS</span>
+    <span>·</span>
     <span>GDPR compliant</span>
-    <span>Â·</span>
-    <span>Date necomunicate terÈ›ilor</span>
-    <span>Â·</span>
-    <span>Nu Ã®nlocuieÈ™te terapia profesionalÄƒ</span>
+    <span>·</span>
+    <span>Date necomunicate terților</span>
+    <span>·</span>
+    <span>Nu înlocuiește terapia profesională</span>
   </div>
 </section>
 
@@ -1027,60 +1027,60 @@ footer{
         <div class="about-avatar">ST</div>
         <div>
           <div class="about-name">Psiholog Clinician Sebastian Turba</div>
-          <div class="about-title">Fondator Noctis Â· 35 ani experienÈ›Äƒ</div>
+          <div class="about-title">Fondator Noctis · 35 ani experiență</div>
         </div>
       </div>
-      <p class="about-bio">ÃŽn 35 de ani de practicÄƒ clinicÄƒ, am vÄƒzut mii de oameni care aveau nevoie de ajutor dar nu Ã®ndrÄƒzneau sÄƒ cearÄƒ. RuÈ™inea, distanÈ›a, costurile, teama de a fi judecaÈ›i â€” toate acestea Ã®i opreau sÄƒ facÄƒ primul pas.</p>
-      <p class="about-bio">Noctis s-a nÄƒscut din aceastÄƒ realitate. Nu ca un Ã®nlocuitor al terapiei, ci ca un prim pas accesibil, anonim È™i disponibil oricÃ¢nd â€” inclusiv la 3 noaptea cÃ¢nd gÃ¢ndurile nu te lasÄƒ sÄƒ dormi.</p>
-      <p class="about-bio">Ca psiholog clinician cu formare Ã®n anxietate, terapie de cuplu, dependenÈ›e È™i sexologie clinicÄƒ, am ghidat fiecare aspect al acestui instrument. Noctis vorbeÈ™te cu cÄƒldura unui specialist, nu cu rÄƒceala unui robot.</p>
+      <p class="about-bio">În 35 de ani de practică clinică, am văzut mii de oameni care aveau nevoie de ajutor dar nu îndrăzneau să ceară. Rușinea, distanța, costurile, teama de a fi judecați — toate acestea îi opreau să facă primul pas.</p>
+      <p class="about-bio">Noctis s-a născut din această realitate. Nu ca un înlocuitor al terapiei, ci ca un prim pas accesibil, anonim și disponibil oricând — inclusiv la 3 noaptea când gândurile nu te lasă să dormi.</p>
+      <p class="about-bio">Ca psiholog clinician cu formare în anxietate, terapie de cuplu, dependențe și sexologie clinică, am ghidat fiecare aspect al acestui instrument. Noctis vorbește cu căldura unui specialist, nu cu răceala unui robot.</p>
       <div class="about-creds">
-        <div class="about-cred"><span>ðŸŽ“</span> Psiholog clinician atestat</div>
-        <div class="about-cred"><span>ðŸ“…</span> 35 ani experienÈ›Äƒ clinicÄƒ</div>
-        <div class="about-cred"><span>ðŸ’‘</span> 35 ani cÄƒsnicie â€” experienÈ›Äƒ realÄƒ Ã®n relaÈ›ii</div>
-        <div class="about-cred"><span>ðŸŒ</span> Suport Ã®n romÃ¢nÄƒ pentru diaspora</div>
+        <div class="about-cred"><span>🎓</span> Psiholog clinician atestat</div>
+        <div class="about-cred"><span>📅</span> 35 ani experiență clinică</div>
+        <div class="about-cred"><span>💑</span> 35 ani căsnicie — experiență reală în relații</div>
+        <div class="about-cred"><span>🌍</span> Suport în română pentru diaspora</div>
       </div>
     </div>
     <div class="about-right">
       <div class="about-contact-card">
         <h3>Contact direct</h3>
-        <p>Ai Ã®ntrebÄƒri despre Noctis sau vrei sÄƒ colaborÄƒm? Sunt disponibil.</p>
+        <p>Ai întrebări despre Noctis sau vrei să colaborăm? Sunt disponibil.</p>
         <div class="contact-item">
-          <span>ðŸ“ž</span>
+          <span>📞</span>
           <a href="tel:0786487308">0786 487 308</a>
         </div>
         <div class="contact-item">
-          <span>âœ‰ï¸</span>
+          <span>✉️</span>
           <span class="contact-email">______________________</span>
         </div>
         <div class="contact-item">
-          <span>ðŸ•</span>
-          <span>Luniâ€“Vineri Â· 09:00â€“18:00</span>
+          <span>🕐</span>
+          <span>Luni–Vineri · 09:00–18:00</span>
         </div>
-        <button class="btn-primary" style="width:100%;margin-top:1.5rem;font-size:14px" onclick="openApp()">Sau vorbeÈ™te direct cu Noctis â†’</button>
+        <button class="btn-primary" style="width:100%;margin-top:1.5rem;font-size:14px" onclick="openApp()">Sau vorbește direct cu Noctis →</button>
       </div>
 
       <!-- FAQ -->
       <div class="faq-card">
-        <h3>ÃŽntrebÄƒri frecvente</h3>
+        <h3>Întrebări frecvente</h3>
         <div class="faq-item" onclick="toggleFaq(this)">
-          <div class="faq-q">Noctis Ã®nlocuieÈ™te psihologul? <span>+</span></div>
-          <div class="faq-a">Nu. Noctis este un instrument de suport emoÈ›ional AI, nu un terapeut uman. Este primul pas â€” un spaÈ›iu sigur sÄƒ vorbeÈ™ti deschis. Pentru terapie profesionalÄƒ, consultaÈ›i un specialist.</div>
+          <div class="faq-q">Noctis înlocuiește psihologul? <span>+</span></div>
+          <div class="faq-a">Nu. Noctis este un instrument de suport emoțional AI, nu un terapeut uman. Este primul pas — un spațiu sigur să vorbești deschis. Pentru terapie profesională, consultați un specialist.</div>
         </div>
         <div class="faq-item" onclick="toggleFaq(this)">
-          <div class="faq-q">ConversaÈ›iile sunt confidenÈ›iale? <span>+</span></div>
-          <div class="faq-a">Da. ConversaÈ›iile nu sunt stocate pe servere externe. Istoricul rÄƒmÃ¢ne doar pe dispozitivul tÄƒu È™i poate fi È™ters oricÃ¢nd.</div>
+          <div class="faq-q">Conversațiile sunt confidențiale? <span>+</span></div>
+          <div class="faq-a">Da. Conversațiile nu sunt stocate pe servere externe. Istoricul rămâne doar pe dispozitivul tău și poate fi șters oricând.</div>
         </div>
         <div class="faq-item" onclick="toggleFaq(this)">
-          <div class="faq-q">Cum funcÈ›ioneazÄƒ planul gratuit? <span>+</span></div>
-          <div class="faq-a">Planul gratuit Ã®È›i oferÄƒ 5 mesaje pe zi, fÄƒrÄƒ card È™i fÄƒrÄƒ Ã®nregistrare. PoÈ›i testa Noctis fÄƒrÄƒ nicio obligaÈ›ie.</div>
+          <div class="faq-q">Cum funcționează planul gratuit? <span>+</span></div>
+          <div class="faq-a">Planul gratuit îți oferă 5 mesaje pe zi, fără card și fără înregistrare. Poți testa Noctis fără nicio obligație.</div>
         </div>
         <div class="faq-item" onclick="toggleFaq(this)">
-          <div class="faq-q">FuncÈ›ioneazÄƒ pe telefon? <span>+</span></div>
-          <div class="faq-a">Da, perfect. Noctis funcÈ›ioneazÄƒ Ã®n orice browser È™i poate fi instalat ca aplicaÈ›ie nativÄƒ pe iPhone, Android sau laptop â€” fÄƒrÄƒ App Store.</div>
+          <div class="faq-q">Funcționează pe telefon? <span>+</span></div>
+          <div class="faq-a">Da, perfect. Noctis funcționează în orice browser și poate fi instalat ca aplicație nativă pe iPhone, Android sau laptop — fără App Store.</div>
         </div>
         <div class="faq-item" onclick="toggleFaq(this)">
-          <div class="faq-q">Este disponibil È™i Ã®n afara RomÃ¢niei? <span>+</span></div>
-          <div class="faq-a">Da. Noctis este disponibil pentru romÃ¢nii din UK, Spania, FranÈ›a, Australia, Canada È™i oriunde Ã®n lume. FuncÈ›ioneazÄƒ Ã®n romÃ¢nÄƒ, englezÄƒ È™i spaniolÄƒ.</div>
+          <div class="faq-q">Este disponibil și în afara României? <span>+</span></div>
+          <div class="faq-a">Da. Noctis este disponibil pentru românii din UK, Spania, Franța, Australia, Canada și oriunde în lume. Funcționează în română, engleză și spaniolă.</div>
         </div>
       </div>
     </div>
@@ -1093,14 +1093,14 @@ footer{
 <section class="newsletter-section" id="newsletter">
   <div class="newsletter-inner">
     <div class="sec-label" style="margin-bottom:1rem">Newsletter</div>
-    <h2>GÃ¢ndul zilei<br><em>Ã®n inbox-ul tÄƒu</em></h2>
-    <p>AboneazÄƒ-te È™i primeÈ™ti gratuit fiecare postare a Psihologului Noctis â€” reflecÈ›ii despre anxietate, relaÈ›ii, echilibru interior. FÄƒrÄƒ spam, oricÃ¢nd te dezabonezi.</p>
+    <h2>Gândul zilei<br><em>în inbox-ul tău</em></h2>
+    <p>Abonează-te și primești gratuit fiecare postare a Psihologului Noctis — reflecții despre anxietate, relații, echilibru interior. Fără spam, oricând te dezabonezi.</p>
     <div class="newsletter-form">
       <input class="newsletter-input" id="nl-email" type="email" placeholder="adresa@ta@email.com"/>
-      <button class="newsletter-btn" onclick="subscribeNewsletter()">AboneazÄƒ-mÄƒ gratuit â†’</button>
+      <button class="newsletter-btn" onclick="subscribeNewsletter()">Abonează-mă gratuit →</button>
     </div>
-    <div class="newsletter-success" id="nl-success">âœ… MulÈ›umesc! Vei primi urmÄƒtoarea postare Ã®n inbox.</div>
-    <p class="newsletter-note">ðŸ”’ Emailul tÄƒu e confidenÈ›ial. Nu Ã®l transmitem nimÄƒnui.</p>
+    <div class="newsletter-success" id="nl-success">✅ Mulțumesc! Vei primi următoarea postare în inbox.</div>
+    <p class="newsletter-note">🔒 Emailul tău e confidențial. Nu îl transmitem nimănui.</p>
   </div>
 </section>
 
@@ -1110,38 +1110,38 @@ footer{
     <div class="footer-top">
       <div class="footer-col">
         <h4>Noctis</h4>
-        <p>Un spaÈ›iu sigur unde gÃ¢ndurile tale conteazÄƒ. Suport emoÈ›ional AI disponibil 24/7, supervizat de Psiholog Clinician Sebastian Turba.</p>
+        <p>Un spațiu sigur unde gândurile tale contează. Suport emoțional AI disponibil 24/7, supervizat de Psiholog Clinician Sebastian Turba.</p>
         <div style="display:flex;gap:10px;margin-top:1rem">
-          <a href="#" class="social-icon" title="TikTok">ðŸŽµ</a>
-          <a href="#" class="social-icon" title="Instagram">ðŸ“·</a>
-          <a href="#" class="social-icon" title="Facebook">ðŸ“˜</a>
+          <a href="#" class="social-icon" title="TikTok">🎵</a>
+          <a href="#" class="social-icon" title="Instagram">📷</a>
+          <a href="#" class="social-icon" title="Facebook">📘</a>
         </div>
       </div>
       <div class="footer-col">
         <h4>Navigare</h4>
-        <a href="#" onclick="openApp();return false">IntrÄƒ Ã®n aplicaÈ›ie</a>
+        <a href="#" onclick="openApp();return false">Intră în aplicație</a>
         <a href="#despre">Despre noi</a>
-        <a href="#blog">GÃ¢ndul zilei</a>
-        <a href="#payments" onclick="openPayModal();return false">PreÈ›uri & PlÄƒÈ›i</a>
+        <a href="#blog">Gândul zilei</a>
+        <a href="#payments" onclick="openPayModal();return false">Prețuri & Plăți</a>
         <a href="#newsletter">Newsletter</a>
-        <a href="#" onclick="openInstall();return false">InstaleazÄƒ aplicaÈ›ia</a>
+        <a href="#" onclick="openInstall();return false">Instalează aplicația</a>
       </div>
       <div class="footer-col">
         <h4>Legal</h4>
-        <a href="#" onclick="openModal('tc');return false">Termeni È™i condiÈ›ii</a>
-        <a href="#" onclick="openModal('gdpr');return false">PoliticÄƒ GDPR</a>
-        <a href="#" onclick="openModal('cookies');return false">PoliticÄƒ cookies</a>
+        <a href="#" onclick="openModal('tc');return false">Termeni și condiții</a>
+        <a href="#" onclick="openModal('gdpr');return false">Politică GDPR</a>
+        <a href="#" onclick="openModal('cookies');return false">Politică cookies</a>
         <h4 style="margin-top:1.25rem">Contact</h4>
-        <a href="tel:0786487308">ðŸ“ž 0786 487 308</a>
-        <a href="mailto:">âœ‰ï¸ email@noctis.ro</a>
+        <a href="tel:0786487308">📞 0786 487 308</a>
+        <a href="mailto:">✉️ email@noctis.ro</a>
       </div>
     </div>
     <div class="footer-bot">
       <div class="footer-brand">
         <div style="width:20px;height:20px;border-radius:50%;border:1px solid var(--violet);display:flex;align-items:center;justify-content:center"><div style="width:5px;height:5px;border-radius:50%;background:var(--violet)"></div></div>
-        Noctis Â© 2026 Â· Psiholog Clinician Sebastian Turba
+        Noctis © 2026 · Psiholog Clinician Sebastian Turba
       </div>
-      <div class="footer-legal">Noctis nu Ã®nlocuieÈ™te consultul medical sau terapia profesionalÄƒ.</div>
+      <div class="footer-legal">Noctis nu înlocuiește consultul medical sau terapia profesională.</div>
     </div>
   </div>
 </footer>
@@ -1149,11 +1149,11 @@ footer{
 <!-- COOKIES BANNER -->
 <div class="cookies-banner" id="cookies-banner">
   <div class="cookies-text">
-    ðŸª Folosim cookies pentru a Ã®mbunÄƒtÄƒÈ›i experienÈ›a ta. ContinuÃ¢nd, eÈ™ti de acord cu <a href="#" onclick="openModal('cookies');return false">Politica de cookies</a>.
+    🍪 Folosim cookies pentru a îmbunătăți experiența ta. Continuând, ești de acord cu <a href="#" onclick="openModal('cookies');return false">Politica de cookies</a>.
   </div>
   <div class="cookies-btns">
     <button class="cookies-accept" onclick="acceptCookies()">Accept</button>
-    <button class="cookies-decline" onclick="declineCookies()">Doar esenÈ›iale</button>
+    <button class="cookies-decline" onclick="declineCookies()">Doar esențiale</button>
   </div>
 </div>
 
@@ -1161,119 +1161,119 @@ footer{
 <div class="overlay" id="legal-overlay">
   <div class="legal-modal">
     <div class="legal-head">
-      <h3 id="legal-title">Termeni È™i condiÈ›ii</h3>
-      <button class="am-close" onclick="closeLegal()">âœ•</button>
+      <h3 id="legal-title">Termeni și condiții</h3>
+      <button class="am-close" onclick="closeLegal()">✕</button>
     </div>
     <div class="legal-body" id="legal-body"></div>
   </div>
 </div>
 
 
-<!-- â•â•â•â•â•â•â•â•â•â•â•â•â•â• APP MODAL â•â•â•â•â•â•â•â•â•â•â•â•â•â• -->
+<!-- ══════════════ APP MODAL ══════════════ -->
 <div class="overlay" id="app-overlay">
   <div class="app-modal">
     <div class="am-head">
       <div class="am-agent">
-        <div class="am-orb">ðŸ§ </div>
+        <div class="am-orb">🧠</div>
         <div class="am-info">
           <h3>Noctis</h3>
-          <p id="am-status">online Â· confidenÈ›ial</p>
+          <p id="am-status">online · confidențial</p>
         </div>
       </div>
       <div style="display:flex;gap:8px;align-items:center">
         <span id="msg-counter" style="display:none;font-size:10px;font-weight:300;color:var(--muted);
           background:var(--surface);border:0.5px solid var(--border);border-radius:12px;
           padding:3px 10px;cursor:pointer" onclick="openPayModal()" title="Upgrade pentru mesaje nelimitate">5/5 mesaje azi</span>
-        <button class="history-toggle" onclick="toggleHistory()" title="Istoric conversaÈ›ii">ðŸ“‹</button>
-        <button class="am-close" onclick="closeApp()">âœ•</button>
+        <button class="history-toggle" onclick="toggleHistory()" title="Istoric conversații">📋</button>
+        <button class="am-close" onclick="closeApp()">✕</button>
       </div>
     </div>
 
     <!-- HISTORY PANEL -->
     <div class="history-panel" id="history-panel" style="display:none">
       <div class="history-head">
-        <span>ðŸ“‹ Istoricul tÄƒu</span>
-        <button onclick="clearHistory()" style="background:none;border:none;color:var(--ghost);cursor:pointer;font-size:11px">È˜terge tot</button>
+        <span>📋 Istoricul tău</span>
+        <button onclick="clearHistory()" style="background:none;border:none;color:var(--ghost);cursor:pointer;font-size:11px">Șterge tot</button>
       </div>
       <div class="history-cats" id="history-cats"></div>
     </div>
 
     <div class="am-msgs" id="am-msgs">
       <div>
-        <div class="bubble ai" id="am-first">BunÄƒ. Sunt Noctis â€” un spaÈ›iu sigur pentru tine, disponibil oricÃ¢nd. Ce te aduce azi?</div>
+        <div class="bubble ai" id="am-first">Bună. Sunt Noctis — un spațiu sigur pentru tine, disponibil oricând. Ce te aduce azi?</div>
         <div class="btime">acum</div>
       </div>
     </div>
     <div class="am-topics" id="am-topics">
-      <span class="tchip" onclick="appTopic('MÄƒ simt anxios/anxioasÄƒ','anxietate')">ðŸ˜° Anxietate</span>
-      <span class="tchip" onclick="appTopic('Bucuria cÄƒsniciei â€” vreau sÄƒ vorbesc despre relaÈ›ia mea','casatorie')">ðŸ’ Bucuria cÄƒsniciei</span>
-      <span class="tchip" onclick="appTopic('SingurÄƒtate Ã®n doi â€” mÄƒ simt singur/Äƒ deÈ™i sunt cu cineva','singuratate')">ðŸ’” SingurÄƒtate Ã®n doi</span>
-      <span class="tchip" onclick="appTopic('Am trecut printr-o ranÄƒ sufleteascÄƒ â€” traumÄƒ, pierdere sau decepÈ›ie','rani')">ðŸŒªï¸ RÄƒni sufleteÈ™ti</span>
-      <span class="tchip" onclick="appTopic('MÄƒ lupt cu dependenÈ›a de alcool','alcool')">ðŸ· Alcool</span>
-      <span class="tchip" onclick="appTopic('MÄƒ lupt cu dependenÈ›a de jocuri de noroc','jocuri')">ðŸŽ° Jocuri de noroc</span>
-      <span class="tchip" onclick="appTopic('MÄƒ lupt cu dependenÈ›a de substanÈ›e','substante')">ðŸ’Š SubstanÈ›e</span>
-      <span class="tchip" onclick="appTopic('Am frici È™i fobii pe care vreau sÄƒ le Ã®nÈ›eleg','frica')">ðŸ˜¨ FricÄƒ & Fobii</span>
-      <span class="tchip" onclick="appTopic('Am nevoie de un spaÈ›iu sigur pentru identitatea mea','lgbtq')">ðŸ³ï¸â€ðŸŒˆ LGBTQ+</span>
-      <span class="tchip" onclick="appTopic('Am o Ã®ntrebare despre armonie sexualÄƒ','sexualitate')">ðŸŒ¸ Armonie sexualÄƒ</span>
-      <span class="tchip" onclick="appTopic('Vreau doar sÄƒ vorbesc cu cineva','vorbesc')">ðŸ’¬ Vreau sÄƒ vorbesc</span>
+      <span class="tchip" onclick="appTopic('Mă simt anxios/anxioasă','anxietate')">😰 Anxietate</span>
+      <span class="tchip" onclick="appTopic('Bucuria căsniciei — vreau să vorbesc despre relația mea','casatorie')">💍 Bucuria căsniciei</span>
+      <span class="tchip" onclick="appTopic('Singurătate în doi — mă simt singur/ă deși sunt cu cineva','singuratate')">💔 Singurătate în doi</span>
+      <span class="tchip" onclick="appTopic('Am trecut printr-o rană sufletească — traumă, pierdere sau decepție','rani')">🌪️ Răni sufletești</span>
+      <span class="tchip" onclick="appTopic('Mă lupt cu dependența de alcool','alcool')">🍷 Alcool</span>
+      <span class="tchip" onclick="appTopic('Mă lupt cu dependența de jocuri de noroc','jocuri')">🎰 Jocuri de noroc</span>
+      <span class="tchip" onclick="appTopic('Mă lupt cu dependența de substanțe','substante')">💊 Substanțe</span>
+      <span class="tchip" onclick="appTopic('Am frici și fobii pe care vreau să le înțeleg','frica')">😨 Frică & Fobii</span>
+      <span class="tchip" onclick="appTopic('Am nevoie de un spațiu sigur pentru identitatea mea','lgbtq')">🏳️‍🌈 LGBTQ+</span>
+      <span class="tchip" onclick="appTopic('Am o întrebare despre armonie sexuală','sexualitate')">🌸 Armonie sexuală</span>
+      <span class="tchip" onclick="appTopic('Vreau doar să vorbesc cu cineva','vorbesc')">💬 Vreau să vorbesc</span>
     </div>
     <div class="am-in-row">
-      <input class="am-in" id="am-in" placeholder="Scrie ce simÈ›i..." onkeydown="if(event.key==='Enter')appSend()"/>
+      <input class="am-in" id="am-in" placeholder="Scrie ce simți..." onkeydown="if(event.key==='Enter')appSend()"/>
       <button class="send" onclick="appSend()"><svg viewBox="0 0 24 24"><path d="M2 21l21-9L2 3v7l15 2-15 2z"/></svg></button>
     </div>
-    <div class="am-disc">Noctis oferÄƒ suport emoÈ›ional AI. Nu Ã®nlocuieÈ™te terapia profesionalÄƒ. Â· <a href="#" style="color:var(--violet)">GDPR</a></div>
+    <div class="am-disc">Noctis oferă suport emoțional AI. Nu înlocuiește terapia profesională. · <a href="#" style="color:var(--violet)">GDPR</a></div>
   </div>
 </div>
 
-<!-- â•â•â•â•â•â•â•â•â•â•â•â•â•â• PAYMENT MODAL â•â•â•â•â•â•â•â•â•â•â•â•â•â• -->
+<!-- ══════════════ PAYMENT MODAL ══════════════ -->
 <div class="overlay" id="pay-overlay">
   <div class="pay-modal">
     <div class="pm-head">
       <div>
-        <h2>AboneazÄƒ-te la Noctis</h2>
-        <p>Anulezi oricÃ¢nd Â· FÄƒrÄƒ contracte Â· PlatÄƒ securizatÄƒ</p>
+        <h2>Abonează-te la Noctis</h2>
+        <p>Anulezi oricând · Fără contracte · Plată securizată</p>
       </div>
-      <button class="am-close" onclick="closePayModal()">âœ•</button>
+      <button class="am-close" onclick="closePayModal()">✕</button>
     </div>
     <div class="pm-plans">
       <div class="pm-row" onclick="selectPlanPay('free')">
-        <div class="pm-row-left"><h4>Gratuit</h4><p>5 mesaje/zi Â· FÄƒrÄƒ card necesar</p></div>
-        <div class="pm-row-price"><div class="big">0 RON</div><div class="per">/lunÄƒ</div></div>
+        <div class="pm-row-left"><h4>Gratuit</h4><p>5 mesaje/zi · Fără card necesar</p></div>
+        <div class="pm-row-price"><div class="big">0 RON</div><div class="per">/lună</div></div>
       </div>
       <div class="pm-row hi" onclick="selectPlanPay('pro')">
-        <div class="pm-row-left"><h4>Pro âœ¦</h4><p>ConversaÈ›ii nelimitate Â· Jurnal Â· ExerciÈ›ii</p></div>
-        <div class="pm-row-price"><div class="big">49 RON</div><div class="per">/lunÄƒ</div></div>
+        <div class="pm-row-left"><h4>Pro ✦</h4><p>Conversații nelimitate · Jurnal · Exerciții</p></div>
+        <div class="pm-row-price"><div class="big">49 RON</div><div class="per">/lună</div></div>
       </div>
       <div class="pm-row" onclick="selectPlanPay('premium')">
         <div class="pm-row-left"><h4>Premium</h4><p>Tot Pro + rapoarte lunare + prioritate</p></div>
-        <div class="pm-row-price"><div class="big">99 RON</div><div class="per">/lunÄƒ</div></div>
+        <div class="pm-row-price"><div class="big">99 RON</div><div class="per">/lună</div></div>
       </div>
     </div>
     <div class="pm-methods-sec">
-      <h4>Alege metoda de platÄƒ</h4>
+      <h4>Alege metoda de plată</h4>
       <div class="pm-methods-list">
         <div class="pm-meth" onclick="showBank(false);showConfirm('card')">
-          <span class="pm-meth-icon">ðŸ’³</span>
+          <span class="pm-meth-icon">💳</span>
           <div class="pm-meth-info"><h5>Card bancar</h5><p>Visa, Mastercard</p></div>
         </div>
         <div class="pm-meth" onclick="showBank(false);showConfirm('revolut')">
-          <span class="pm-meth-icon">ðŸ”„</span>
-          <div class="pm-meth-info"><h5>Revolut</h5><p>Instant, orice valutÄƒ</p></div>
+          <span class="pm-meth-icon">🔄</span>
+          <div class="pm-meth-info"><h5>Revolut</h5><p>Instant, orice valută</p></div>
         </div>
         <div class="pm-meth" onclick="showBank(false);showConfirm('apple')">
-          <span class="pm-meth-icon">ðŸŽ</span>
+          <span class="pm-meth-icon">🍎</span>
           <div class="pm-meth-info"><h5>Apple Pay</h5><p>Touch / Face ID</p></div>
         </div>
         <div class="pm-meth" onclick="showBank(false);showConfirm('google')">
-          <span class="pm-meth-icon">ðŸ¤–</span>
-          <div class="pm-meth-info"><h5>Google Pay</h5><p>Android Â· Chrome</p></div>
+          <span class="pm-meth-icon">🤖</span>
+          <div class="pm-meth-info"><h5>Google Pay</h5><p>Android · Chrome</p></div>
         </div>
         <div class="pm-meth" onclick="showBank(false);showConfirm('payu')">
-          <span class="pm-meth-icon">ðŸ¦</span>
+          <span class="pm-meth-icon">🏦</span>
           <div class="pm-meth-info"><h5>PayU</h5><p>Procesator RO</p></div>
         </div>
         <div class="pm-meth" onclick="showBank(true)">
-          <span class="pm-meth-icon">ðŸ›ï¸</span>
+          <span class="pm-meth-icon">🏛️</span>
           <div class="pm-meth-info"><h5>Transfer bancar</h5><p>RON sau EUR/GBP</p></div>
         </div>
       </div>
@@ -1281,51 +1281,51 @@ footer{
     <!-- Bank details (shown when transfer selected) -->
     <div class="pm-bank-info" id="bank-info">
       <h4>Date transfer bancar</h4>
-      <div class="bank-row"><span>Beneficiar</span><span id="bank-name">â€” se completeazÄƒ â€”</span></div>
-      <div class="bank-row"><span>IBAN RON</span><span id="bank-iban-ron">â€” se completeazÄƒ â€”</span></div>
-      <div class="bank-row"><span>IBAN EUR</span><span id="bank-iban-eur">â€” se completeazÄƒ â€”</span></div>
-      <div class="bank-row"><span>IBAN GBP</span><span id="bank-iban-gbp">â€” se completeazÄƒ â€”</span></div>
-      <div class="bank-row"><span>BIC/SWIFT</span><span id="bank-swift">â€” se completeazÄƒ â€”</span></div>
-      <div class="bank-row"><span>ReferinÈ›Äƒ</span><span>NOCTIS-[email]-PRO</span></div>
+      <div class="bank-row"><span>Beneficiar</span><span id="bank-name">— se completează —</span></div>
+      <div class="bank-row"><span>IBAN RON</span><span id="bank-iban-ron">— se completează —</span></div>
+      <div class="bank-row"><span>IBAN EUR</span><span id="bank-iban-eur">— se completează —</span></div>
+      <div class="bank-row"><span>IBAN GBP</span><span id="bank-iban-gbp">— se completează —</span></div>
+      <div class="bank-row"><span>BIC/SWIFT</span><span id="bank-swift">— se completează —</span></div>
+      <div class="bank-row"><span>Referință</span><span>NOCTIS-[email]-PRO</span></div>
     </div>
-    <div class="pm-foot">ðŸ”’ PlatÄƒ securizatÄƒ Â· GDPR Â· SSL Â· Datele tale nu sunt vÃ¢ndute terÈ›ilor</div>
+    <div class="pm-foot">🔒 Plată securizată · GDPR · SSL · Datele tale nu sunt vândute terților</div>
   </div>
 </div>
 
 <!-- WHATSAPP FLOAT -->
-<a href="https://wa.me/40786487308" target="_blank" class="wa-float" title="ContacteazÄƒ pe WhatsApp">
+<a href="https://wa.me/40786487308" target="_blank" class="wa-float" title="Contactează pe WhatsApp">
   <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
 </a>
 
-<!-- â•â•â•â•â•â•â•â•â•â•â•â•â•â• CRISIS MODAL â•â•â•â•â•â•â•â•â•â•â•â•â•â• -->
+<!-- ══════════════ CRISIS MODAL ══════════════ -->
 <div class="overlay" id="crisis-overlay">
   <div class="crisis-modal">
     <div class="crisis-header">
-      <div class="crisis-icon">ðŸ¤</div>
-      <h2>EÈ™ti Ã®n siguranÈ›Äƒ</h2>
-      <p>Nu eÈ™ti singur/Äƒ. ExistÄƒ oameni pregÄƒtiÈ›i sÄƒ te asculte chiar acum.</p>
+      <div class="crisis-icon">🤝</div>
+      <h2>Ești în siguranță</h2>
+      <p>Nu ești singur/ă. Există oameni pregătiți să te asculte chiar acum.</p>
     </div>
     <div class="crisis-numbers">
       <a href="tel:112" class="crisis-card red">
         <div class="crisis-num">112</div>
-        <div class="crisis-label">UrgenÈ›e â€” apeleazÄƒ acum</div>
-        <div class="crisis-sub">Disponibil 24/7 Â· Gratuit</div>
+        <div class="crisis-label">Urgențe — apelează acum</div>
+        <div class="crisis-sub">Disponibil 24/7 · Gratuit</div>
       </a>
       <a href="tel:116111" class="crisis-card violet">
         <div class="crisis-num">116 111</div>
         <div class="crisis-label">Telefonul Copilului</div>
-        <div class="crisis-sub">Copii È™i tineri Â· 24/7 Â· Gratuit</div>
+        <div class="crisis-sub">Copii și tineri · 24/7 · Gratuit</div>
       </a>
       <a href="tel:0800801200" class="crisis-card aurora">
         <div class="crisis-num">0800 801 200</div>
-        <div class="crisis-label">Linie antisuicid RomÃ¢nia</div>
-        <div class="crisis-sub">AdulÈ›i Â· 24/7 Â· Gratuit</div>
+        <div class="crisis-label">Linie antisuicid România</div>
+        <div class="crisis-sub">Adulți · 24/7 · Gratuit</div>
       </a>
     </div>
     <div class="crisis-message">
-      <p>Noctis este alÄƒturi de tine â€” dar pentru situaÈ›ii de crizÄƒ, un om real face diferenÈ›a. Te rugÄƒm sÄƒ suni.</p>
+      <p>Noctis este alături de tine — dar pentru situații de criză, un om real face diferența. Te rugăm să suni.</p>
     </div>
-    <button class="crisis-close" onclick="closeCrisisModal()">RÄƒmÃ¢n cu Noctis</button>
+    <button class="crisis-close" onclick="closeCrisisModal()">Rămân cu Noctis</button>
   </div>
 </div>
 
@@ -1333,25 +1333,25 @@ footer{
 <div class="overlay" id="inst-overlay">
   <div class="inst-modal">
     <div class="inst-head">
-      <h2>InstaleazÄƒ Noctis</h2>
-      <button class="am-close" onclick="document.getElementById('inst-overlay').classList.remove('open')">âœ•</button>
+      <h2>Instalează Noctis</h2>
+      <button class="am-close" onclick="document.getElementById('inst-overlay').classList.remove('open')">✕</button>
     </div>
     <div class="inst-os-tabs">
-      <button class="ios-tab on" id="tab-ios" onclick="showInstallOS('ios',this)">ðŸŽ iPhone / iPad</button>
-      <button class="ios-tab" id="tab-android" onclick="showInstallOS('android',this)">ðŸ¤– Android</button>
-      <button class="ios-tab" id="tab-desktop" onclick="showInstallOS('desktop',this)">ðŸ’» Desktop</button>
+      <button class="ios-tab on" id="tab-ios" onclick="showInstallOS('ios',this)">🍎 iPhone / iPad</button>
+      <button class="ios-tab" id="tab-android" onclick="showInstallOS('android',this)">🤖 Android</button>
+      <button class="ios-tab" id="tab-desktop" onclick="showInstallOS('desktop',this)">💻 Desktop</button>
     </div>
     <div class="inst-steps" id="inst-steps"></div>
   </div>
 </div>
 
 <script>
-// â”€â”€ FAQ â”€â”€
+// ── FAQ ──
 function toggleFaq(el){
   el.classList.toggle('open');
 }
 
-// â”€â”€ COOKIES â”€â”€
+// ── COOKIES ──
 function acceptCookies(){document.getElementById('cookies-banner').classList.remove('show');localStorage.setItem('noctis_cookies','accepted')}
 function declineCookies(){document.getElementById('cookies-banner').classList.remove('show');localStorage.setItem('noctis_cookies','declined')}
 window.addEventListener('load',()=>{
@@ -1360,54 +1360,54 @@ window.addEventListener('load',()=>{
   }
 });
 
-// â”€â”€ LEGAL MODALS â”€â”€
+// ── LEGAL MODALS ──
 const legalContent={
   tc:{
-    title:'Termeni È™i condiÈ›ii',
+    title:'Termeni și condiții',
     body:`<h4>1. Acceptarea termenilor</h4>
-<p>Prin utilizarea platformei Noctis, eÈ™ti de acord cu aceÈ™ti termeni. DacÄƒ nu eÈ™ti de acord, te rugÄƒm sÄƒ nu utilizezi serviciul.</p>
+<p>Prin utilizarea platformei Noctis, ești de acord cu acești termeni. Dacă nu ești de acord, te rugăm să nu utilizezi serviciul.</p>
 <h4>2. Descrierea serviciului</h4>
-<p>Noctis este un instrument de suport emoÈ›ional bazat pe inteligenÈ›Äƒ artificialÄƒ, creat È™i supervizat de Psiholog Clinician Sebastian Turba. Noctis NU Ã®nlocuieÈ™te terapia psihologicÄƒ sau psihiatricÄƒ profesionalÄƒ.</p>
-<h4>3. LimitÄƒri</h4>
-<p>Noctis nu este un serviciu medical sau psihiatric. Nu oferim diagnostic, tratament sau prescripÈ›ii. ÃŽn situaÈ›ii de urgenÈ›Äƒ, contactaÈ›i 112 sau un medic specialist.</p>
-<h4>4. ConfidenÈ›ialitate</h4>
-<p>ConversaÈ›iile sunt procesate prin servicii AI terÈ›e. Nu stocÄƒm conversaÈ›ii pe serverele noastre. Istoricul rÄƒmÃ¢ne pe dispozitivul utilizatorului.</p>
-<h4>5. Utilizare responsabilÄƒ</h4>
-<p>Utilizatorul se angajeazÄƒ sÄƒ foloseascÄƒ Noctis Ã®n mod responsabil È™i sÄƒ nu transmitÄƒ informaÈ›ii false sau sÄƒ abuzeze de serviciu.</p>
-<h4>6. PlÄƒÈ›i È™i abonamente</h4>
-<p>Abonamentele se reÃ®nnoiesc automat lunar. PoÈ›i anula oricÃ¢nd din contul tÄƒu, fÄƒrÄƒ penalitÄƒÈ›i. RambursÄƒrile se proceseazÄƒ Ã®n 14 zile lucrÄƒtoare.</p>
+<p>Noctis este un instrument de suport emoțional bazat pe inteligență artificială, creat și supervizat de Psiholog Clinician Sebastian Turba. Noctis NU înlocuiește terapia psihologică sau psihiatrică profesională.</p>
+<h4>3. Limitări</h4>
+<p>Noctis nu este un serviciu medical sau psihiatric. Nu oferim diagnostic, tratament sau prescripții. În situații de urgență, contactați 112 sau un medic specialist.</p>
+<h4>4. Confidențialitate</h4>
+<p>Conversațiile sunt procesate prin servicii AI terțe. Nu stocăm conversații pe serverele noastre. Istoricul rămâne pe dispozitivul utilizatorului.</p>
+<h4>5. Utilizare responsabilă</h4>
+<p>Utilizatorul se angajează să folosească Noctis în mod responsabil și să nu transmită informații false sau să abuzeze de serviciu.</p>
+<h4>6. Plăți și abonamente</h4>
+<p>Abonamentele se reînnoiesc automat lunar. Poți anula oricând din contul tău, fără penalități. Rambursările se procesează în 14 zile lucrătoare.</p>
 <h4>7. Contact</h4>
-<p>Psiholog Clinician Sebastian Turba Â· Tel: 0786 487 308</p>`
+<p>Psiholog Clinician Sebastian Turba · Tel: 0786 487 308</p>`
   },
   gdpr:{
-    title:'PoliticÄƒ GDPR',
+    title:'Politică GDPR',
     body:`<h4>1. Cine suntem</h4>
 <p>Operatorul de date este Psiholog Clinician Sebastian Turba, responsabil cu platforma Noctis.</p>
-<h4>2. Ce date colectÄƒm</h4>
-<p>ColectÄƒm: adresa de email (pentru newsletter, opÈ›ional), date de platÄƒ (procesate de terÈ›i), cookies tehnice de funcÈ›ionare.</p>
+<h4>2. Ce date colectăm</h4>
+<p>Colectăm: adresa de email (pentru newsletter, opțional), date de plată (procesate de terți), cookies tehnice de funcționare.</p>
 <h4>3. Cum folosim datele</h4>
-<p>Datele sunt folosite exclusiv pentru furnizarea serviciului, trimiterea newsletter-ului (cu acordul tÄƒu) È™i Ã®mbunÄƒtÄƒÈ›irea platformei.</p>
+<p>Datele sunt folosite exclusiv pentru furnizarea serviciului, trimiterea newsletter-ului (cu acordul tău) și îmbunătățirea platformei.</p>
 <h4>4. Drepturile tale</h4>
-<p>Ai dreptul la: acces la datele tale, rectificare, È™tergere ("dreptul de a fi uitat"), portabilitate È™i opoziÈ›ie. Pentru exercitarea drepturilor, contacteazÄƒ-ne la adresa de email.</p>
-<h4>5. ConversaÈ›ii</h4>
-<p>ConversaÈ›iile din Noctis nu sunt stocate pe serverele noastre. Istoricul se salveazÄƒ doar local, pe dispozitivul tÄƒu.</p>
-<h4>6. TerÈ›i</h4>
-<p>Folosim servicii AI terÈ›e (Groq) pentru procesarea conversaÈ›iilor. AceÈ™ti furnizori respectÄƒ standardele GDPR.</p>
+<p>Ai dreptul la: acces la datele tale, rectificare, ștergere ("dreptul de a fi uitat"), portabilitate și opoziție. Pentru exercitarea drepturilor, contactează-ne la adresa de email.</p>
+<h4>5. Conversații</h4>
+<p>Conversațiile din Noctis nu sunt stocate pe serverele noastre. Istoricul se salvează doar local, pe dispozitivul tău.</p>
+<h4>6. Terți</h4>
+<p>Folosim servicii AI terțe (Groq) pentru procesarea conversațiilor. Acești furnizori respectă standardele GDPR.</p>
 <h4>7. Contact DPO</h4>
 <p>Tel: 0786 487 308</p>`
   },
   cookies:{
-    title:'PoliticÄƒ cookies',
+    title:'Politică cookies',
     body:`<h4>Ce sunt cookies</h4>
-<p>Cookies sunt fiÈ™iere mici stocate pe dispozitivul tÄƒu pentru a Ã®mbunÄƒtÄƒÈ›i experienÈ›a de utilizare.</p>
-<h4>Cookies esenÈ›iale</h4>
-<p>Necesare pentru funcÈ›ionarea de bazÄƒ a platformei: preferinÈ›e de limbÄƒ, sesiune de utilizator, preferinÈ›e cookies. Nu pot fi dezactivate.</p>
-<h4>Cookies de stocare localÄƒ</h4>
-<p>Noctis foloseÈ™te localStorage pentru: istoricul conversaÈ›iilor (salvat doar local), preferinÈ›ele tale de limbÄƒ È™i regiune, statusul abonamentului la newsletter.</p>
-<h4>Cookies de analizÄƒ</h4>
-<p>Cu acordul tÄƒu, folosim cookies anonime pentru a Ã®nÈ›elege cum este utilizatÄƒ platforma, fÄƒrÄƒ date personale identificabile.</p>
+<p>Cookies sunt fișiere mici stocate pe dispozitivul tău pentru a îmbunătăți experiența de utilizare.</p>
+<h4>Cookies esențiale</h4>
+<p>Necesare pentru funcționarea de bază a platformei: preferințe de limbă, sesiune de utilizator, preferințe cookies. Nu pot fi dezactivate.</p>
+<h4>Cookies de stocare locală</h4>
+<p>Noctis folosește localStorage pentru: istoricul conversațiilor (salvat doar local), preferințele tale de limbă și regiune, statusul abonamentului la newsletter.</p>
+<h4>Cookies de analiză</h4>
+<p>Cu acordul tău, folosim cookies anonime pentru a înțelege cum este utilizată platforma, fără date personale identificabile.</p>
 <h4>Controlul cookies</h4>
-<p>PoÈ›i È™terge oricÃ¢nd cookies din setÄƒrile browserului. Istoricul conversaÈ›iilor poate fi È™ters din aplicaÈ›ie, butonul ðŸ“‹.</p>
+<p>Poți șterge oricând cookies din setările browserului. Istoricul conversațiilor poate fi șters din aplicație, butonul 📋.</p>
 <h4>Contact</h4>
 <p>Tel: 0786 487 308</p>`
   }
@@ -1423,7 +1423,7 @@ function openModal(type){
 function closeLegal(){document.getElementById('legal-overlay').classList.remove('open')}
 document.getElementById('legal-overlay').addEventListener('click',function(e){if(e.target===this)closeLegal()});
 
-// â”€â”€ STARS â”€â”€
+// ── STARS ──
 const starsC=document.getElementById('stars');
 for(let i=0;i<70;i++){
   const s=document.createElement('div');s.className='star';
@@ -1432,55 +1432,55 @@ for(let i=0;i<70;i++){
   starsC.appendChild(s);
 }
 
-// â”€â”€ LANG â”€â”€
+// ── LANG ──
 const L={
   ro:{
-    pill:'Disponibil 24/7 Â· Cabinet virtual Â· 6 È›Äƒri',
-    title:'Nu eÈ™ti<br><em>singur</em><br>niciodatÄƒ.',
-    sub:'Un spaÈ›iu sigur unde gÃ¢ndurile tale conteazÄƒ. Suport emoÈ›ional AI pentru anxietate, bucuria cÄƒsniciei, dependenÈ›e È™i armonie sexualÄƒ. ConfidenÈ›ial, empatic, disponibil la 3 dimineaÈ›a.',
-    cta:'ÃŽncearcÄƒ gratuit â†’',cta2:'Vezi preÈ›urile',
-    dLabel:'Demo live',dTitle:'VorbeÈ™te cu<br><em>Noctis</em> acum',
-    dBody:'FÄƒrÄƒ programare, fÄƒrÄƒ judecatÄƒ. Scrii ce simÈ›i, primeÈ™ti rÄƒspuns imediat.',
-    fctaTitle:'Primul pas<br><em>e gratuit.</em>',fctaSub:'FÄƒrÄƒ card, fÄƒrÄƒ programare. Deschizi aplicaÈ›ia È™i vorbeÈ™ti. AtÃ¢t.',
-    amFirst:'BunÄƒ. Sunt Noctis â€” un spaÈ›iu sigur pentru tine, disponibil oricÃ¢nd. Ce te aduce azi?',
-    dFirst:'BunÄƒ. Sunt Noctis â€” un spaÈ›iu sigur. Ce te aduce azi?',
-    topics:[['ðŸ˜° Anxietate','MÄƒ simt anxios/anxioasÄƒ'],['ðŸ’ Bucuria cÄƒsniciei','Bucuria cÄƒsniciei â€” vreau sÄƒ vorbesc despre relaÈ›ia mea'],['ðŸ’” SingurÄƒtate Ã®n doi','SingurÄƒtate Ã®n doi â€” mÄƒ simt singur/Äƒ deÈ™i sunt cu cineva'],['ðŸŒªï¸ RÄƒni sufleteÈ™ti','Am trecut printr-o ranÄƒ sufleteascÄƒ â€” traumÄƒ, pierdere sau decepÈ›ie'],['ðŸ”„ DependenÈ›e','MÄƒ lupt cu o dependenÈ›Äƒ'],['ðŸŒ¸ Armonie sexualÄƒ','Am o Ã®ntrebare despre armonie sexualÄƒ'],['ðŸ’¬ Vorbesc','Vreau doar sÄƒ vorbesc cu cineva']],
-    sys:'EÈ™ti Noctis, un companion emoÈ›ional AI empatic, disponibil 24/7. EÈ™ti cald, non-judecativ È™i empatic. Oferi sprijin emoÈ›ional Ã®n domeniile: anxietate, bucuria cÄƒsniciei, singurÄƒtate Ã®n doi, rÄƒni sufleteÈ™ti (traume, pierderi, decepÈ›ii), dependenÈ›e (alcool, substanÈ›e, jocuri de noroc), fricÄƒ È™i fobii, LGBTQ+, armonie sexualÄƒ. NU eÈ™ti terapeut uman È™i menÈ›ionezi asta cÃ¢nd e relevant. EÈ™ti un spaÈ›iu sigur de suport emoÈ›ional, nu un Ã®nlocuitor al terapiei profesionale. VorbeÈ™ti exclusiv romÃ¢nÄƒ. RÄƒspunde Ã®n 2-4 propoziÈ›ii scurte, calde È™i empatice. Nu da sfaturi medicale concrete.'
+    pill:'Disponibil 24/7 · Cabinet virtual · 6 țări',
+    title:'Nu ești<br><em>singur</em><br>niciodată.',
+    sub:'Un spațiu sigur unde gândurile tale contează. Suport emoțional AI pentru anxietate, bucuria căsniciei, dependențe și armonie sexuală. Confidențial, empatic, disponibil la 3 dimineața.',
+    cta:'Încearcă gratuit →',cta2:'Vezi prețurile',
+    dLabel:'Demo live',dTitle:'Vorbește cu<br><em>Noctis</em> acum',
+    dBody:'Fără programare, fără judecată. Scrii ce simți, primești răspuns imediat.',
+    fctaTitle:'Primul pas<br><em>e gratuit.</em>',fctaSub:'Fără card, fără programare. Deschizi aplicația și vorbești. Atât.',
+    amFirst:'Bună. Sunt Noctis — un spațiu sigur pentru tine, disponibil oricând. Ce te aduce azi?',
+    dFirst:'Bună. Sunt Noctis — un spațiu sigur. Ce te aduce azi?',
+    topics:[['😰 Anxietate','Mă simt anxios/anxioasă'],['💍 Bucuria căsniciei','Bucuria căsniciei — vreau să vorbesc despre relația mea'],['💔 Singurătate în doi','Singurătate în doi — mă simt singur/ă deși sunt cu cineva'],['🌪️ Răni sufletești','Am trecut printr-o rană sufletească — traumă, pierdere sau decepție'],['🔄 Dependențe','Mă lupt cu o dependență'],['🌸 Armonie sexuală','Am o întrebare despre armonie sexuală'],['💬 Vorbesc','Vreau doar să vorbesc cu cineva']],
+    sys:'Ești Noctis, un companion emoțional AI empatic, disponibil 24/7. Ești cald, non-judecativ și empatic. Oferi sprijin emoțional în domeniile: anxietate, bucuria căsniciei, singurătate în doi, răni sufletești (traume, pierderi, decepții), dependențe (alcool, substanțe, jocuri de noroc), frică și fobii, LGBTQ+, armonie sexuală. NU ești terapeut uman și menționezi asta când e relevant. Ești un spațiu sigur de suport emoțional, nu un înlocuitor al terapiei profesionale. Vorbești exclusiv română. Răspunde în 2-4 propoziții scurte, calde și empatice. Nu da sfaturi medicale concrete.'
   },
   en:{
-    pill:'Available 24/7 Â· Virtual clinic Â· 6 countries',
+    pill:'Available 24/7 · Virtual clinic · 6 countries',
     title:'You\'re never<br><em>alone.</em>',
     sub:'AI psychological support for anxiety, relationships, addictions and sexology. Confidential, empathetic, available at 3am when you need it.',
-    cta:'Try free â†’',cta2:'See pricing',
+    cta:'Try free →',cta2:'See pricing',
     dLabel:'Live demo',dTitle:'Talk to<br><em>Noctis</em> now',
     dBody:'No appointment. No judgment. Write what you feel, get an immediate response.',
     fctaTitle:'First step<br><em>is free.</em>',fctaSub:'No card, no appointment. Open the app and talk. That\'s it.',
-    amFirst:'Hi. I\'m Noctis â€” a safe space for you, available anytime. What brings you here?',
+    amFirst:'Hi. I\'m Noctis — a safe space for you, available anytime. What brings you here?',
     dFirst:'Hi. I\'m Noctis. What brings you here today?',
-    topics:[['ðŸ˜° Anxiety','I feel anxious'],['ðŸ’ Marriage joy','I want to talk about my relationship'],['ðŸ’” Loneliness in two','I feel lonely even though I\'m with someone'],['ðŸŒªï¸ Soul wounds','I\'ve been through trauma, loss or heartbreak'],['ðŸ”„ Addictions','I\'m struggling with addiction'],['ðŸŒ¸ Sexual harmony','I have a question about sexual harmony'],['ðŸ’¬ Just talk','I just want to talk']],
+    topics:[['😰 Anxiety','I feel anxious'],['💍 Marriage joy','I want to talk about my relationship'],['💔 Loneliness in two','I feel lonely even though I\'m with someone'],['🌪️ Soul wounds','I\'ve been through trauma, loss or heartbreak'],['🔄 Addictions','I\'m struggling with addiction'],['🌸 Sexual harmony','I have a question about sexual harmony'],['💬 Just talk','I just want to talk']],
     sys:'You are Noctis, an empathetic AI companion specialized in psychological support in English for Romanian diaspora. You are warm, non-judgmental, empathetic. You focus on anxiety, couples therapy, addictions and clinical sexology. You are not a human therapist and say so when relevant, but you provide real emotional support. Keep responses to 2-4 short sentences. Do not give concrete medical advice.'
   },
   es:{
-    pill:'Disponible 24/7 Â· Gabinete virtual Â· 6 paÃ­ses',
-    title:'Nunca estÃ¡s<br><em>solo.</em>',
-    sub:'Apoyo psicolÃ³gico IA para ansiedad, pareja, adicciones y sexologÃ­a. Confidencial, empÃ¡tico, disponible a las 3am.',
-    cta:'Prueba gratis â†’',cta2:'Ver precios',
+    pill:'Disponible 24/7 · Gabinete virtual · 6 países',
+    title:'Nunca estás<br><em>solo.</em>',
+    sub:'Apoyo psicológico IA para ansiedad, pareja, adicciones y sexología. Confidencial, empático, disponible a las 3am.',
+    cta:'Prueba gratis →',cta2:'Ver precios',
     dLabel:'Demo en vivo',dTitle:'Habla con<br><em>Noctis</em> ahora',
-    dBody:'Sin cita, sin juicios. Escribe lo que sientes, obtÃ©n respuesta inmediata.',
+    dBody:'Sin cita, sin juicios. Escribe lo que sientes, obtén respuesta inmediata.',
     fctaTitle:'El primer paso<br><em>es gratis.</em>',fctaSub:'Sin tarjeta, sin cita. Abres la app y hablas. Eso es todo.',
-    amFirst:'Hola. Soy Noctis â€” un espacio seguro para ti. Â¿QuÃ© te trae hoy?',
-    dFirst:'Hola. Soy Noctis. Â¿QuÃ© te trae hoy?',
-    topics:[['ðŸ˜° Ansiedad','Me siento ansioso/a'],['ðŸ’ AlegrÃ­a conyugal','Quiero hablar sobre mi relaciÃ³n'],['ðŸ’” Soledad en pareja','Me siento solo/a aunque estoy con alguien'],['ðŸŒªï¸ Heridas del alma','He pasado por un trauma, pÃ©rdida o decepciÃ³n'],['ðŸ”„ Adicciones','Lucho con una adicciÃ³n'],['ðŸŒ¸ ArmonÃ­a sexual','Tengo pregunta de armonÃ­a sexual'],['ðŸ’¬ Hablar','Solo quiero hablar']],
-    sys:'Eres Noctis, un compaÃ±ero IA empÃ¡tico especializado en apoyo psicolÃ³gico en espaÃ±ol. Eres cÃ¡lido, sin juicios, empÃ¡tico. Te especializas en ansiedad, terapia de pareja, adicciones y sexologÃ­a clÃ­nica. No eres terapeuta humano y lo mencionas cuando es necesario, pero ofreces apoyo emocional real. Responde en 2-4 oraciones cortas. No des consejos mÃ©dicos concretos.'
+    amFirst:'Hola. Soy Noctis — un espacio seguro para ti. ¿Qué te trae hoy?',
+    dFirst:'Hola. Soy Noctis. ¿Qué te trae hoy?',
+    topics:[['😰 Ansiedad','Me siento ansioso/a'],['💍 Alegría conyugal','Quiero hablar sobre mi relación'],['💔 Soledad en pareja','Me siento solo/a aunque estoy con alguien'],['🌪️ Heridas del alma','He pasado por un trauma, pérdida o decepción'],['🔄 Adicciones','Lucho con una adicción'],['🌸 Armonía sexual','Tengo pregunta de armonía sexual'],['💬 Hablar','Solo quiero hablar']],
+    sys:'Eres Noctis, un compañero IA empático especializado en apoyo psicológico en español. Eres cálido, sin juicios, empático. Te especializas en ansiedad, terapia de pareja, adicciones y sexología clínica. No eres terapeuta humano y lo mencionas cuando es necesario, pero ofreces apoyo emocional real. Responde en 2-4 oraciones cortas. No des consejos médicos concretos.'
   }
 };
 
 let curLang='ro', appHistory=[], curSys=L.ro.sys;
 
-// â”€â”€ BACKEND CONFIG â”€â”€
-const BACKEND_URL = 'https://noctis-backend-production.up.railway.app'; // â† Ã®n producÈ›ie: 'https://api.noctis.ro'
+// ── BACKEND CONFIG ──
+const BACKEND_URL = 'http://localhost:3001'; // ← în producție: 'https://api.noctis.ro'
 
-// â”€â”€ SESSION â”€â”€
+// ── SESSION ──
 let noctisSession = { sessionId: null, plan: 'free', remainingToday: 5 };
 
 async function initSession() {
@@ -1494,7 +1494,7 @@ async function initSession() {
       updateMsgCounter();
     }
   } catch(e) {
-    // backend offline â€” demo mode cu Groq fallback
+    // backend offline — demo mode cu Groq fallback
     if (stored) noctisSession.sessionId = stored;
   }
 }
@@ -1506,14 +1506,14 @@ function updateMsgCounter() {
     el.textContent = `${noctisSession.remainingToday}/5 mesaje azi`;
     el.style.display = 'block';
   } else {
-    el.textContent = 'âˆž Pro';
+    el.textContent = '∞ Pro';
     el.style.color  = 'var(--aurora)';
     el.style.display = 'block';
   }
 }
 
 function showUpgradePrompt() {
-  // InsereazÄƒ un mesaj special Ã®n chat care invitÄƒ la upgrade
+  // Inserează un mesaj special în chat care invită la upgrade
   const c = document.getElementById('am-msgs');
   const d = document.createElement('div');
   d.innerHTML = `
@@ -1521,16 +1521,16 @@ function showUpgradePrompt() {
       border:0.5px solid var(--violet);border-radius:16px;padding:1rem 1.25rem;
       margin:4px 0;text-align:center;">
       <div style="font-size:13px;font-weight:500;margin-bottom:6px;color:var(--text)">
-        Ai atins limita zilnicÄƒ de 5 mesaje ðŸŒ™
+        Ai atins limita zilnică de 5 mesaje 🌙
       </div>
       <div style="font-size:12px;font-weight:300;color:var(--muted);margin-bottom:12px;line-height:1.5">
-        Cu <strong style="color:var(--violet)">Pro (49 RON/lunÄƒ)</strong> ai conversaÈ›ii nelimitate,
-        jurnal de progres È™i exerciÈ›ii terapeutice.
+        Cu <strong style="color:var(--violet)">Pro (49 RON/lună)</strong> ai conversații nelimitate,
+        jurnal de progres și exerciții terapeutice.
       </div>
       <button onclick="openPayModal()" style="padding:8px 24px;border-radius:20px;
         background:var(--violet);border:none;color:white;font-family:var(--ff-body);
         font-size:12px;font-weight:500;cursor:pointer;">
-        Upgrade acum â†’
+        Upgrade acum →
       </button>
     </div>`;
   c.appendChild(d);
@@ -1558,40 +1558,40 @@ function setLang(lang,btn){
   const at=document.getElementById('am-topics');
   at.innerHTML=d.topics.map(t=>`<span class="tchip" onclick="appTopic('${t[1]}')">${t[0]}</span>`).join('');
   appHistory=[];
-  // ActualizeazÄƒ vocea È™i butoanele
+  // Actualizează vocea și butoanele
   setTimeout(()=>updateVoiceBtns(),100);
 }
 
-// â”€â”€ PRICING DATA â”€â”€
+// ── PRICING DATA ──
 const pricingData={
   ro:{
     plans:[
-      {name:'Gratuit',price:'0',curr:'RON',period:'/lunÄƒ',feats:['5 mesaje pe zi','Teme de bazÄƒ','FÄƒrÄƒ card necesar'],off:['ConversaÈ›ii nelimitate','Jurnal de progres','ExerciÈ›ii ghidate'],star:false},
-      {name:'Pro',price:'49',curr:'RON',period:'/lunÄƒ',feats:['ConversaÈ›ii nelimitate','Jurnal de progres','ExerciÈ›ii terapeutice ghidate','Suport prioritar 24/7'],off:[],star:true},
-      {name:'Premium',price:'99',curr:'RON',period:'/lunÄƒ',feats:['Tot din Pro','Rapoarte lunare de progres','Sesiuni de respiraÈ›ie & meditaÈ›ie','Acces beta la funcÈ›ii noi'],off:[],star:false}
+      {name:'Gratuit',price:'0',curr:'RON',period:'/lună',feats:['5 mesaje pe zi','Teme de bază','Fără card necesar'],off:['Conversații nelimitate','Jurnal de progres','Exerciții ghidate'],star:false},
+      {name:'Pro',price:'49',curr:'RON',period:'/lună',feats:['Conversații nelimitate','Jurnal de progres','Exerciții terapeutice ghidate','Suport prioritar 24/7'],off:[],star:true},
+      {name:'Premium',price:'99',curr:'RON',period:'/lună',feats:['Tot din Pro','Rapoarte lunare de progres','Sesiuni de respirație & meditație','Acces beta la funcții noi'],off:[],star:false}
     ],
     methods:[
-      {icon:'ðŸ’³',name:'Card bancar',desc:'Visa Â· Mastercard Â· orice emisÄƒ Ã®n RO',hi:false},
-      {icon:'ðŸ”„',name:'Revolut',desc:'Instant Â· RON, EUR, GBP, AUD, CAD',hi:true},
-      {icon:'ðŸŽ',name:'Apple Pay',desc:'Touch ID sau Face ID',hi:false},
-      {icon:'ðŸ¤–',name:'Google Pay',desc:'Android & Chrome',hi:false},
-      {icon:'ðŸ¦',name:'PayU Romania',desc:'Procesator local, plÄƒÈ›i Ã®n RON',hi:false},
-      {icon:'ðŸ›ï¸',name:'Transfer bancar',desc:'RON Â· EUR Â· GBP â€” date la abonare',hi:false}
+      {icon:'💳',name:'Card bancar',desc:'Visa · Mastercard · orice emisă în RO',hi:false},
+      {icon:'🔄',name:'Revolut',desc:'Instant · RON, EUR, GBP, AUD, CAD',hi:true},
+      {icon:'🍎',name:'Apple Pay',desc:'Touch ID sau Face ID',hi:false},
+      {icon:'🤖',name:'Google Pay',desc:'Android & Chrome',hi:false},
+      {icon:'🏦',name:'PayU Romania',desc:'Procesator local, plăți în RON',hi:false},
+      {icon:'🏛️',name:'Transfer bancar',desc:'RON · EUR · GBP — date la abonare',hi:false}
     ]
   },
   eu:{
     plans:[
-      {name:'Free',price:'0',curr:'â‚¬',period:'/month',feats:['5 messages per day','Basic topics','No card needed'],off:['Unlimited chats','Progress journal','Guided exercises'],star:false},
-      {name:'Pro',price:'9',curr:'â‚¬',period:'/month',feats:['Unlimited conversations','Progress journal','Guided therapeutic exercises','Priority support 24/7'],off:[],star:true},
-      {name:'Premium',price:'19',curr:'â‚¬',period:'/month',feats:['Everything in Pro','Monthly progress reports','Breathing & meditation sessions','Beta feature access'],off:[],star:false}
+      {name:'Free',price:'0',curr:'€',period:'/month',feats:['5 messages per day','Basic topics','No card needed'],off:['Unlimited chats','Progress journal','Guided exercises'],star:false},
+      {name:'Pro',price:'9',curr:'€',period:'/month',feats:['Unlimited conversations','Progress journal','Guided therapeutic exercises','Priority support 24/7'],off:[],star:true},
+      {name:'Premium',price:'19',curr:'€',period:'/month',feats:['Everything in Pro','Monthly progress reports','Breathing & meditation sessions','Beta feature access'],off:[],star:false}
     ],
     methods:[
-      {icon:'ðŸ’³',name:'Bank card',desc:'Visa Â· Mastercard Â· any EU card',hi:false},
-      {icon:'ðŸ”„',name:'Revolut',desc:'Instant Â· EUR, GBP, RON',hi:true},
-      {icon:'ðŸŽ',name:'Apple Pay',desc:'Touch ID or Face ID',hi:false},
-      {icon:'ðŸ¤–',name:'Google Pay',desc:'Android & Chrome',hi:false},
-      {icon:'ðŸ¦',name:'Stripe',desc:'Secure international payment',hi:false},
-      {icon:'ðŸ›ï¸',name:'Bank transfer',desc:'EUR Â· GBP â€” details on signup',hi:false}
+      {icon:'💳',name:'Bank card',desc:'Visa · Mastercard · any EU card',hi:false},
+      {icon:'🔄',name:'Revolut',desc:'Instant · EUR, GBP, RON',hi:true},
+      {icon:'🍎',name:'Apple Pay',desc:'Touch ID or Face ID',hi:false},
+      {icon:'🤖',name:'Google Pay',desc:'Android & Chrome',hi:false},
+      {icon:'🏦',name:'Stripe',desc:'Secure international payment',hi:false},
+      {icon:'🏛️',name:'Bank transfer',desc:'EUR · GBP — details on signup',hi:false}
     ]
   },
   au:{
@@ -1601,12 +1601,12 @@ const pricingData={
       {name:'Premium',price:'29',curr:'A$',period:'/month',feats:['Everything in Pro','Monthly reports','Breathing sessions','Beta access'],off:[],star:false}
     ],
     methods:[
-      {icon:'ðŸ’³',name:'Bank card',desc:'Visa Â· Mastercard',hi:false},
-      {icon:'ðŸ”„',name:'Revolut',desc:'Instant Â· AUD, CAD, EUR',hi:true},
-      {icon:'ðŸŽ',name:'Apple Pay',desc:'Touch ID or Face ID',hi:false},
-      {icon:'ðŸ¤–',name:'Google Pay',desc:'Android & Chrome',hi:false},
-      {icon:'ðŸ¦',name:'PayID / Interac',desc:'AU & CA instant transfer',hi:false},
-      {icon:'ðŸ›ï¸',name:'Bank transfer',desc:'AUD Â· CAD â€” details on signup',hi:false}
+      {icon:'💳',name:'Bank card',desc:'Visa · Mastercard',hi:false},
+      {icon:'🔄',name:'Revolut',desc:'Instant · AUD, CAD, EUR',hi:true},
+      {icon:'🍎',name:'Apple Pay',desc:'Touch ID or Face ID',hi:false},
+      {icon:'🤖',name:'Google Pay',desc:'Android & Chrome',hi:false},
+      {icon:'🏦',name:'PayID / Interac',desc:'AU & CA instant transfer',hi:false},
+      {icon:'🏛️',name:'Bank transfer',desc:'AUD · CAD — details on signup',hi:false}
     ]
   }
 };
@@ -1621,7 +1621,7 @@ function renderPlans(r){
   const d=pricingData[r];
   document.getElementById('plans-grid').innerHTML=d.plans.map(p=>`
     <div class="plan${p.star?' star':''}">
-      ${p.star?'<div style="font-size:10px;padding:3px 10px;border-radius:20px;background:var(--violet);color:white;display:inline-block;margin-bottom:0.75rem;font-weight:500">âœ¦ Cel mai ales</div>':''}
+      ${p.star?'<div style="font-size:10px;padding:3px 10px;border-radius:20px;background:var(--violet);color:white;display:inline-block;margin-bottom:0.75rem;font-weight:500">✦ Cel mai ales</div>':''}
       <div class="plan-name">${p.name}</div>
       <div class="plan-price-big">${p.curr}${p.price}<small>${p.curr==='0'?'':''}</small></div>
       <div class="plan-period">${p.period}</div>
@@ -1629,7 +1629,7 @@ function renderPlans(r){
         ${p.feats.map(f=>`<li>${f}</li>`).join('')}
         ${p.off.map(f=>`<li class="off">${f}</li>`).join('')}
       </ul>
-      <button class="plan-btn2" onclick="${p.price==='0'?'openApp()':'openPayModal()'}">${p.price==='0'?'ÃŽncearcÄƒ gratuit':'AboneazÄƒ-te acum'}</button>
+      <button class="plan-btn2" onclick="${p.price==='0'?'openApp()':'openPayModal()'}">${p.price==='0'?'Încearcă gratuit':'Abonează-te acum'}</button>
     </div>
   `).join('');
   document.getElementById('pay-methods-grid').innerHTML=d.methods.map(m=>`
@@ -1647,27 +1647,27 @@ function renderPlans(r){
 }
 renderPlans('ro');
 
-// â”€â”€ DEMO CHAT (quick responses, no API) â”€â”€
+// ── DEMO CHAT (quick responses, no API) ──
 const quickR={
-  'MÄƒ simt anxios':'ÃŽnÈ›eleg. Anxietatea poate fi copleÈ™itoare. PoÈ›i sÄƒ-mi spui mai mult â€” e o senzaÈ›ie mai mult fizicÄƒ (tensiune, respiraÈ›ie grea) sau mai mult gÃ¢nduri care nu se opresc?',
-  'Bucuria cÄƒsniciei':'ÃŽmi bucur cÄƒ eÈ™ti aici. RelaÈ›iile de cuplu sunt un drum continuu â€” cu suiÈ™uri È™i coborÃ¢È™uri. Vrei sÄƒ-mi povesteÈ™ti ce simÈ›i Ã®n acest moment?',
-  'SingurÄƒtate Ã®n doi':'SingurÄƒtatea Ã®n doi e poate cea mai grea formÄƒ de singurÄƒtate â€” eÈ™ti cu cineva, dar te simÈ›i nevÄƒzut/Äƒ. ÃŽmi poÈ›i spune mai mult despre ce trÄƒieÈ™ti?',
-  'RÄƒni sufleteÈ™ti':'ÃŽmi pare rÄƒu cÄƒ treci prin asta. Pierderile, traumele È™i decepÈ›iile lasÄƒ urme adÃ¢nci. Nu trebuie sÄƒ le porÈ›i singur/Äƒ. Ce s-a Ã®ntÃ¢mplat?',
-  'DependenÈ›Äƒ':'Curajul de a recunoaÈ™te asta este primul pas important. Fie cÄƒ e vorba de alcool, substanÈ›e, ecrane sau altceva â€” sunt prezent. Ce te preocupÄƒ cel mai mult acum?',
-  'Armonie sexualÄƒ':'PoÈ›i Ã®ntreba orice â€” suntem Ã®ntr-un spaÈ›iu sigur È™i absolut confidenÈ›ial. Armonia sexualÄƒ e parte fireascÄƒ din bunÄƒstarea noastrÄƒ. Nu existÄƒ Ã®ntrebÄƒri greÈ™ite.',
-  'Vreau doar sÄƒ vorbesc cu cineva':'Sunt aici. Uneori nu ai nevoie de o soluÈ›ie â€” ai nevoie doar de cineva care sÄƒ te asculte. Spune-mi, ce e Ã®n mintea ta acum?'
+  'Mă simt anxios':'Înțeleg. Anxietatea poate fi copleșitoare. Poți să-mi spui mai mult — e o senzație mai mult fizică (tensiune, respirație grea) sau mai mult gânduri care nu se opresc?',
+  'Bucuria căsniciei':'Îmi bucur că ești aici. Relațiile de cuplu sunt un drum continuu — cu suișuri și coborâșuri. Vrei să-mi povestești ce simți în acest moment?',
+  'Singurătate în doi':'Singurătatea în doi e poate cea mai grea formă de singurătate — ești cu cineva, dar te simți nevăzut/ă. Îmi poți spune mai mult despre ce trăiești?',
+  'Răni sufletești':'Îmi pare rău că treci prin asta. Pierderile, traumele și decepțiile lasă urme adânci. Nu trebuie să le porți singur/ă. Ce s-a întâmplat?',
+  'Dependență':'Curajul de a recunoaște asta este primul pas important. Fie că e vorba de alcool, substanțe, ecrane sau altceva — sunt prezent. Ce te preocupă cel mai mult acum?',
+  'Armonie sexuală':'Poți întreba orice — suntem într-un spațiu sigur și absolut confidențial. Armonia sexuală e parte firească din bunăstarea noastră. Nu există întrebări greșite.',
+  'Vreau doar să vorbesc cu cineva':'Sunt aici. Uneori nu ai nevoie de o soluție — ai nevoie doar de cineva care să te asculte. Spune-mi, ce e în mintea ta acum?'
 };
 
 function demoTopic(t){
   document.getElementById('demo-chips').style.display='none';
   addDMsg(t,'user');addDTyping();
-  setTimeout(()=>{removeDTyping();addDMsg(quickR[t]||'ÃŽÈ›i mulÈ›umesc cÄƒ mi-ai spus. Deschide aplicaÈ›ia completÄƒ pentru a continua.','ai')},1700);
+  setTimeout(()=>{removeDTyping();addDMsg(quickR[t]||'Îți mulțumesc că mi-ai spus. Deschide aplicația completă pentru a continua.','ai')},1700);
 }
 function demoSend(){
   const i=document.getElementById('demo-in');const txt=i.value.trim();if(!txt)return;i.value='';
   document.getElementById('demo-chips').style.display='none';
   addDMsg(txt,'user');addDTyping();
-  setTimeout(()=>{removeDTyping();addDMsg('ÃŽÈ›i mulÈ›umesc cÄƒ mi-ai spus asta. ApasÄƒ "ÃŽncearcÄƒ gratuit" pentru a continua conversaÈ›ia completÄƒ cu mine.','ai')},1700);
+  setTimeout(()=>{removeDTyping();addDMsg('Îți mulțumesc că mi-ai spus asta. Apasă "Încearcă gratuit" pentru a continua conversația completă cu mine.','ai')},1700);
 }
 function addDMsg(txt,type){
   const c=document.getElementById('demo-msgs');
@@ -1684,7 +1684,7 @@ function addDTyping(){
 }
 function removeDTyping(){const e=document.getElementById('dtyp');if(e)e.remove()}
 
-// â”€â”€ APP MODAL â”€â”€
+// ── APP MODAL ──
 function openApp(){document.getElementById('app-overlay').classList.add('open');setTimeout(()=>document.getElementById('am-in').focus(),100)}
 function closeApp(){document.getElementById('app-overlay').classList.remove('open')}
 document.getElementById('app-overlay').addEventListener('click',function(e){if(e.target===this)closeApp()});
@@ -1704,7 +1704,7 @@ function addAMsg(txt,type){
   const t=new Date().toLocaleTimeString('ro-RO',{hour:'2-digit',minute:'2-digit'});
   const d=document.createElement('div');
   const msgId='msg-'+Date.now();
-  const voiceBtn=type==='ai'?`<br><button class="voice-btn" id="vb-${msgId}" onclick="speakText(this,'${msgId}')"><svg viewBox="0 0 24 24"><path d="M3 9v6h4l5 5V4L7 9H3zm13.5 3c0-1.77-1.02-3.29-2.5-4.03v8.05c1.48-.73 2.5-2.25 2.5-4.02zM14 3.23v2.06c2.89.86 5 3.54 5 6.71s-2.11 5.85-5 6.71v2.06c4.01-.91 7-4.49 7-8.77s-2.99-7.86-7-8.77z"/></svg>ðŸ”Š AscultÄƒ</button>`:'';
+  const voiceBtn=type==='ai'?`<br><button class="voice-btn" id="vb-${msgId}" onclick="speakText(this,'${msgId}')"><svg viewBox="0 0 24 24"><path d="M3 9v6h4l5 5V4L7 9H3zm13.5 3c0-1.77-1.02-3.29-2.5-4.03v8.05c1.48-.73 2.5-2.25 2.5-4.02zM14 3.23v2.06c2.89.86 5 3.54 5 6.71s-2.11 5.85-5 6.71v2.06c4.01-.91 7-4.49 7-8.77s-2.99-7.86-7-8.77z"/></svg>🔊 Ascultă</button>`:'';
   d.innerHTML=`<div class="bubble ${type}" id="${msgId}">${txt}</div>${voiceBtn}<div class="btime${type==='user'?' r':''}">${t}</div>`;
   c.appendChild(d);c.scrollTop=c.scrollHeight;
 }
@@ -1718,7 +1718,7 @@ function removeATyping(){const e=document.getElementById('atyp');if(e)e.remove()
 
 let currentCat='general';
 
-// â”€â”€ HISTORY â”€â”€
+// ── HISTORY ──
 function saveToHistory(role,txt){
   if(!currentCat)return;
   const key='noctis_history_'+currentCat;
@@ -1739,12 +1739,12 @@ function toggleHistory(){
 }
 
 const catNames={
-  anxietate:'ðŸ˜° Anxietate',casatorie:'ðŸ’ Bucuria cÄƒsniciei',
-  singuratate:'ðŸ’” SingurÄƒtate Ã®n doi',rani:'ðŸŒªï¸ RÄƒni sufleteÈ™ti',
-  alcool:'ðŸ· Alcool',jocuri:'ðŸŽ° Jocuri de noroc',
-  substante:'ðŸ’Š SubstanÈ›e',frica:'ðŸ˜¨ FricÄƒ & Fobii',
-  lgbtq:'ðŸ³ï¸â€ðŸŒˆ LGBTQ+',sexualitate:'ðŸŒ¸ Armonie sexualÄƒ',
-  vorbesc:'ðŸ’¬ Vreau sÄƒ vorbesc',general:'ðŸ’¬ General'
+  anxietate:'😰 Anxietate',casatorie:'💍 Bucuria căsniciei',
+  singuratate:'💔 Singurătate în doi',rani:'🌪️ Răni sufletești',
+  alcool:'🍷 Alcool',jocuri:'🎰 Jocuri de noroc',
+  substante:'💊 Substanțe',frica:'😨 Frică & Fobii',
+  lgbtq:'🏳️‍🌈 LGBTQ+',sexualitate:'🌸 Armonie sexuală',
+  vorbesc:'💬 Vreau să vorbesc',general:'💬 General'
 };
 
 function renderHistory(){
@@ -1761,16 +1761,16 @@ function renderHistory(){
       ${hist.slice(-4).map(m=>`<div class="history-msg">${m.role==='user'?'Tu':'Noctis'}: ${m.txt.substring(0,80)}${m.txt.length>80?'...':''}<span>${m.time}</span></div>`).join('')}
     </div>`;
   });
-  container.innerHTML=hasAny?html:`<div class="history-empty">Nu ai conversaÈ›ii salvate Ã®ncÄƒ.<br>ÃŽncepe o conversaÈ›ie È™i ea va apÄƒrea aici.</div>`;
+  container.innerHTML=hasAny?html:`<div class="history-empty">Nu ai conversații salvate încă.<br>Începe o conversație și ea va apărea aici.</div>`;
 }
 
 function clearHistory(){
-  if(!confirm('È˜tergi tot istoricul? AceastÄƒ acÈ›iune nu poate fi anulatÄƒ.'))return;
+  if(!confirm('Ștergi tot istoricul? Această acțiune nu poate fi anulată.'))return;
   Object.keys(catNames).forEach(cat=>localStorage.removeItem('noctis_history_'+cat));
   renderHistory();
 }
 
-// â”€â”€ NEWSLETTER â”€â”€
+// ── NEWSLETTER ──
 function subscribeNewsletter(){
   const email=document.getElementById('nl-email').value.trim();
   if(!email||!email.includes('@')){alert('Te rog introdu un email valid.');return;}
@@ -1782,12 +1782,12 @@ function subscribeNewsletter(){
   document.querySelector('.newsletter-btn').style.display='none';
 }
 
-// â”€â”€ CRIZÄ‚ â€” detecÈ›ie cuvinte cheie â”€â”€
+// ── CRIZĂ — detecție cuvinte cheie ──
 const crisisKeywords=[
-  'sinucid','vreau sÄƒ mor','nu mai vreau sÄƒ trÄƒiesc','sÄƒ mÄƒ omor',
-  'sÄƒ Ã®mi fac rÄƒu','sÄƒ mÄƒ rÄƒnesc','nu mai pot trÄƒi','viaÈ›a nu meritÄƒ',
-  'mai bine mort','mai bine moartÄƒ','sfÃ¢rsit vieÈ›ii','capÄƒt vieÈ›ii',
-  'mÄƒ gÃ¢ndesc sÄƒ dispar','vreau sÄƒ dispar','nu mai am rost'
+  'sinucid','vreau să mor','nu mai vreau să trăiesc','să mă omor',
+  'să îmi fac rău','să mă rănesc','nu mai pot trăi','viața nu merită',
+  'mai bine mort','mai bine moartă','sfârsit vieții','capăt vieții',
+  'mă gândesc să dispar','vreau să dispar','nu mai am rost'
 ];
 
 function detectCrisis(msg){
@@ -1803,14 +1803,14 @@ function closeCrisisModal(){
 }
 
 async function callNoctis(msg){
-  // VerificÄƒ crizÄƒ ÃŽNAINTE de a trimite la AI
+  // Verifică criză ÎNAINTE de a trimite la AI
   if(detectCrisis(msg)){
     appHistory.push({role:'user',content:msg});
     saveToHistory('user',msg);
     addATyping();
     setTimeout(()=>{
       removeATyping();
-      const crisisReply='ÃŽÈ›i mulÈ›umesc cÄƒ mi-ai spus asta. Ceea ce simÈ›i acum este real È™i important. Te rog sÄƒ nu fii singur/Äƒ cu aceste gÃ¢nduri â€” existÄƒ oameni care te pot ajuta chiar acum.';
+      const crisisReply='Îți mulțumesc că mi-ai spus asta. Ceea ce simți acum este real și important. Te rog să nu fii singur/ă cu aceste gânduri — există oameni care te pot ajuta chiar acum.';
       appHistory.push({role:'assistant',content:crisisReply});
       saveToHistory('ai',crisisReply);
       addAMsg(crisisReply,'ai');
@@ -1839,24 +1839,24 @@ async function callNoctis(msg){
     if(res.status === 429){
       const data = await res.json();
       if(data.code === 'DAILY_LIMIT_REACHED'){
-        // Scoate ultimul mesaj al userului din history (nu a primit rÄƒspuns)
+        // Scoate ultimul mesaj al userului din history (nu a primit răspuns)
         appHistory.pop();
         showUpgradePrompt();
       } else {
-        addAMsg('Prea multe cereri. Te rog Ã®ncearcÄƒ Ã®n cÃ¢teva minute.','ai');
+        addAMsg('Prea multe cereri. Te rog încearcă în câteva minute.','ai');
       }
       return;
     }
 
     if(!res.ok){
-      addAMsg('Serviciul este momentan indisponibil. Te rog Ã®ncearcÄƒ din nou.','ai');
+      addAMsg('Serviciul este momentan indisponibil. Te rog încearcă din nou.','ai');
       return;
     }
 
     const data = await res.json();
-    const reply = data.reply || 'A apÄƒrut o eroare. Te rog Ã®ncearcÄƒ din nou.';
+    const reply = data.reply || 'A apărut o eroare. Te rog încearcă din nou.';
 
-    // ActualizeazÄƒ contorul de mesaje
+    // Actualizează contorul de mesaje
     if(data.remainingToday !== undefined){
       noctisSession.remainingToday = data.remainingToday;
       updateMsgCounter();
@@ -1868,11 +1868,11 @@ async function callNoctis(msg){
 
   }catch(e){
     removeATyping();
-    addAMsg('Conexiune Ã®ntreruptÄƒ. VerificÄƒ internetul È™i Ã®ncearcÄƒ din nou.','ai');
+    addAMsg('Conexiune întreruptă. Verifică internetul și încearcă din nou.','ai');
   }
 }
 
-// â”€â”€ PAY MODAL â”€â”€
+// ── PAY MODAL ──
 function openPayModal(){document.getElementById('pay-overlay').classList.add('open')}
 function closePayModal(){document.getElementById('pay-overlay').classList.remove('open')}
 document.getElementById('pay-overlay').addEventListener('click',function(e){if(e.target===this)closePayModal()});
@@ -1886,25 +1886,25 @@ function showConfirm(method){
   setTimeout(()=>{closePayModal();openApp()},200);
 }
 
-// â”€â”€ INSTALL MODAL â”€â”€
+// ── INSTALL MODAL ──
 const instSteps={
   ios:[
-    {n:'1',h:'Deschide Ã®n Safari',p:'Noctis funcÈ›ioneazÄƒ cel mai bine Ã®n Safari pe iPhone/iPad. DacÄƒ eÈ™ti Ã®n alt browser, deschide link-ul Ã®n Safari.'},
-    {n:'2',h:'ApasÄƒ butonul Share',p:'GÄƒseÈ™ti iconiÈ›a Share (pÄƒtratul cu sÄƒgeatÄƒ Ã®n sus) Ã®n bara de jos a Safari.'},
-    {n:'3',h:'Alege â€žAdd to Home Screen"',p:'DeruleazÄƒ Ã®n lista de opÈ›iuni È™i apasÄƒ â€žAdd to Home Screen" (AdaugÄƒ pe ecranul principal).'},
-    {n:'4',h:'ConfirmÄƒ È™i instaleazÄƒ',p:'DÄƒ un nume aplicaÈ›iei (ex: Noctis) È™i apasÄƒ â€žAdd". Vei gÄƒsi icona pe ecranul principal, ca orice aplicaÈ›ie nativÄƒ.'}
+    {n:'1',h:'Deschide în Safari',p:'Noctis funcționează cel mai bine în Safari pe iPhone/iPad. Dacă ești în alt browser, deschide link-ul în Safari.'},
+    {n:'2',h:'Apasă butonul Share',p:'Găsești iconița Share (pătratul cu săgeată în sus) în bara de jos a Safari.'},
+    {n:'3',h:'Alege „Add to Home Screen"',p:'Derulează în lista de opțiuni și apasă „Add to Home Screen" (Adaugă pe ecranul principal).'},
+    {n:'4',h:'Confirmă și instalează',p:'Dă un nume aplicației (ex: Noctis) și apasă „Add". Vei găsi icona pe ecranul principal, ca orice aplicație nativă.'}
   ],
   android:[
-    {n:'1',h:'Deschide Ã®n Chrome',p:'Noctis funcÈ›ioneazÄƒ cel mai bine Ã®n Google Chrome pe Android.'},
-    {n:'2',h:'ApasÄƒ meniul (â‹®)',p:'GÄƒseÈ™ti cele 3 puncte verticale Ã®n colÈ›ul dreapta-sus al Chrome.'},
-    {n:'3',h:'Alege â€žAdd to Home screen"',p:'ApasÄƒ â€žAdd to Home screen" sau â€žInstall app" din meniu.'},
-    {n:'4',h:'ConfirmÄƒ instalarea',p:'ApasÄƒ â€žInstall" Ã®n dialogul care apare. Noctis va apÄƒrea pe ecranul tÄƒu ca aplicaÈ›ie nativÄƒ.'}
+    {n:'1',h:'Deschide în Chrome',p:'Noctis funcționează cel mai bine în Google Chrome pe Android.'},
+    {n:'2',h:'Apasă meniul (⋮)',p:'Găsești cele 3 puncte verticale în colțul dreapta-sus al Chrome.'},
+    {n:'3',h:'Alege „Add to Home screen"',p:'Apasă „Add to Home screen" sau „Install app" din meniu.'},
+    {n:'4',h:'Confirmă instalarea',p:'Apasă „Install" în dialogul care apare. Noctis va apărea pe ecranul tău ca aplicație nativă.'}
   ],
   desktop:[
-    {n:'1',h:'Deschide Ã®n Chrome sau Edge',p:'Noctis poate fi instalat ca aplicaÈ›ie desktop din Chrome sau Microsoft Edge.'},
-    {n:'2',h:'CautÄƒ iconiÈ›a de instalare',p:'ÃŽn bara de adresÄƒ, la dreapta, vei vedea o iconiÈ›Äƒ de instalare (â†“ sau calculator). Apas-o.'},
-    {n:'3',h:'ConfirmÄƒ instalarea',p:'ApasÄƒ â€žInstall" Ã®n dialogul care apare. Noctis se va deschide ca aplicaÈ›ie separatÄƒ.'},
-    {n:'4',h:'Gata!',p:'GÄƒseÈ™ti Noctis Ã®n meniul Start (Windows), Launchpad (Mac) sau ca shortcut pe desktop.'}
+    {n:'1',h:'Deschide în Chrome sau Edge',p:'Noctis poate fi instalat ca aplicație desktop din Chrome sau Microsoft Edge.'},
+    {n:'2',h:'Caută iconița de instalare',p:'În bara de adresă, la dreapta, vei vedea o iconiță de instalare (↓ sau calculator). Apas-o.'},
+    {n:'3',h:'Confirmă instalarea',p:'Apasă „Install" în dialogul care apare. Noctis se va deschide ca aplicație separată.'},
+    {n:'4',h:'Gata!',p:'Găsești Noctis în meniul Start (Windows), Launchpad (Mac) sau ca shortcut pe desktop.'}
   ]
 };
 
@@ -1924,14 +1924,14 @@ function showInstallOS(os,btn){
 }
 document.getElementById('inst-overlay').addEventListener('click',function(e){if(e.target===this)this.classList.remove('open')});
 
-// â”€â”€ VOICE SYNTHESIS â€” MULTILINGV â”€â”€
+// ── VOICE SYNTHESIS — MULTILINGV ──
 let currentUtterance=null;
 
-// Mapare limbi â†’ coduri vocale
+// Mapare limbi → coduri vocale
 const voiceLangMap={
-  ro:{lang:'ro-RO',rate:0.88,pitch:1.1,label:'ðŸ”Š AscultÄƒ',stop:'â¸ OpreÈ™te'},
-  en:{lang:'en-GB',rate:0.9,pitch:1.1,label:'ðŸ”Š Listen',stop:'â¸ Stop'},
-  es:{lang:'es-ES',rate:0.9,pitch:1.1,label:'ðŸ”Š Escuchar',stop:'â¸ Parar'}
+  ro:{lang:'ro-RO',rate:0.88,pitch:1.1,label:'🔊 Ascultă',stop:'⏸ Oprește'},
+  en:{lang:'en-GB',rate:0.9,pitch:1.1,label:'🔊 Listen',stop:'⏸ Stop'},
+  es:{lang:'es-ES',rate:0.9,pitch:1.1,label:'🔊 Escuchar',stop:'⏸ Parar'}
 };
 
 function getVoiceForLang(langCode){
@@ -1939,7 +1939,7 @@ function getVoiceForLang(langCode){
   if(!voices.length)return null;
   const map=voiceLangMap[langCode]||voiceLangMap['ro'];
   const lang=map.lang;
-  // ÃŽncearcÄƒ voce femininÄƒ Ã®n limba exactÄƒ
+  // Încearcă voce feminină în limba exactă
   return voices.find(v=>v.lang===lang&&v.name.toLowerCase().includes('female'))
     ||voices.find(v=>v.lang===lang)
     ||voices.find(v=>v.lang.startsWith(lang.split('-')[0]))
@@ -1947,7 +1947,7 @@ function getVoiceForLang(langCode){
     ||voices[0]||null;
 }
 
-// DetecteazÄƒ limba activÄƒ din butonul selectat
+// Detectează limba activă din butonul selectat
 function getActiveLang(){
   const activeBtn=document.querySelector('.lbtn.on');
   if(!activeBtn)return 'ro';
@@ -1966,7 +1966,7 @@ function speakText(btn,msgId){
   const activeLang=getActiveLang();
   const cfg=voiceLangMap[activeLang]||voiceLangMap['ro'];
 
-  // DacÄƒ deja ruleazÄƒ â€” opreÈ™te
+  // Dacă deja rulează — oprește
   if(currentUtterance&&btn.classList.contains('playing')){
     window.speechSynthesis.cancel();
     btn.classList.remove('playing');
@@ -1975,7 +1975,7 @@ function speakText(btn,msgId){
     return;
   }
 
-  // OpreÈ™te orice altceva
+  // Oprește orice altceva
   window.speechSynthesis.cancel();
   document.querySelectorAll('.voice-btn.playing').forEach(b=>{
     b.classList.remove('playing');
@@ -1989,7 +1989,7 @@ function speakText(btn,msgId){
   utt.pitch=cfg.pitch;
   utt.volume=1;
 
-  // SeteazÄƒ vocea dupÄƒ limbÄƒ
+  // Setează vocea după limbă
   const voice=getVoiceForLang(activeLang);
   if(voice)utt.voice=voice;
 
@@ -2007,7 +2007,7 @@ function speakText(btn,msgId){
   window.speechSynthesis.speak(utt);
 }
 
-// ActualizeazÄƒ textul butoanelor de voce la schimbarea limbii
+// Actualizează textul butoanelor de voce la schimbarea limbii
 function updateVoiceBtns(){
   const cfg=voiceLangMap[getActiveLang()]||voiceLangMap['ro'];
   document.querySelectorAll('.voice-btn:not(.playing)').forEach(b=>{
@@ -2031,7 +2031,7 @@ if('serviceWorker' in navigator){
   });
 }
 
-// â”€â”€ STRIPE CHECKOUT â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+// ── STRIPE CHECKOUT ──────────────────────────────────────
 async function startCheckout(plan, region='ro'){
   try{
     const res = await fetch(`${BACKEND_URL}/api/checkout`,{
@@ -2041,22 +2041,22 @@ async function startCheckout(plan, region='ro'){
     });
     const data = await res.json();
     if(data.url){ window.location.href = data.url; }
-    else { alert('Eroare la iniÈ›ierea plÄƒÈ›ii. ÃŽncearcÄƒ din nou.'); }
+    else { alert('Eroare la inițierea plății. Încearcă din nou.'); }
   }catch(e){
-    alert('Serviciul de plÄƒÈ›i este momentan indisponibil.');
+    alert('Serviciul de plăți este momentan indisponibil.');
   }
 }
 
-// â”€â”€ INIT â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
-// IniÈ›ializeazÄƒ sesiunea la load
+// ── INIT ─────────────────────────────────────────────────
+// Inițializează sesiunea la load
 initSession();
 
-// VerificÄƒ dacÄƒ userul s-a Ã®ntors de la Stripe (success)
+// Verifică dacă userul s-a întors de la Stripe (success)
 const urlParams = new URLSearchParams(window.location.search);
 if(urlParams.get('noctis_session')){
-  // Re-fetch sesiunea actualizatÄƒ
+  // Re-fetch sesiunea actualizată
   setTimeout(()=>initSession(), 500);
-  // CurÄƒÈ›Äƒ URL-ul
+  // Curăță URL-ul
   window.history.replaceState({}, document.title, window.location.pathname);
 }
 </script>
