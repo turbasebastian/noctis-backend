@@ -1,259 +1,233 @@
-/**
- * NOCTIS — Backend Server v2 (Groq edition — GRATUIT)
- * Express + Groq API + Stripe + PostgreSQL
- */
-
 require('dotenv').config();
-const express    = require('express');
-const cors       = require('cors');
-const helmet     = require('helmet');
-const rateLimit  = require('express-rate-limit');
-const Stripe     = require('stripe');
-const db         = require('./db');
+const express = require('express');
+const cors = require('cors');
+const helmet = require('helmet');
+const rateLimit = require('express-rate-limit');
 
 const app = express();
 
-// ── STRIPE LAZY ──────────────────────────────────────────────────────────────
-let _stripe = null;
-function stripe() {
-  if (!_stripe && process.env.STRIPE_SECRET_KEY)
-    _stripe = new Stripe(process.env.STRIPE_SECRET_KEY);
-  return _stripe;
+// ── DB IN-MEMORY ──
+const memStore = new Map();
+function genId() { return Math.random().toString(36).slice(2) + Date.now().toString(36); }
+function memGet(id) {
+  const s = memStore.get(id);
+  if (!s) return null;
+  const today = new Date().toISOString().slice(0, 10);
+  if (s.last_reset_date !== today) { s.messages_used_today = 0; s.last_reset_date = today; }
+  return s;
+}
+function getOrCreate(id) {
+  if (id && memGet(id)) return memGet(id);
+  const newId = id || genId();
+  const s = { id: newId, plan: 'free', messages_used_today: 0, last_reset_date: new Date().toISOString().slice(0, 10), country: null, currency: 'RON' };
+  memStore.set(newId, s);
+  return s;
+}
+function increment(sessionId) {
+  const s = memGet(sessionId);
+  if (s) { s.messages_used_today++; return s.messages_used_today; }
+  return 0;
 }
 
-// ── SECURITY ─────────────────────────────────────────────────────────────────
+// ── CRIZĂ KEYWORDS (bypass limită — mereu gratuit) ──
+const CRISIS_KEYWORDS = ['suicid','ma omor','mă omor','nu mai vreau sa traiesc','nu mai vreau să trăiesc','vreau sa mor','vreau să mor','ma sinucid','mă sinucid','end my life','kill myself','want to die'];
+function isCrisis(text) {
+  return CRISIS_KEYWORDS.some(kw => text.toLowerCase().includes(kw));
+}
+
+// ── MIDDLEWARE ──
 app.use(helmet({ contentSecurityPolicy: false }));
-app.use(cors({
-  origin: process.env.ALLOWED_ORIGINS
-    ? process.env.ALLOWED_ORIGINS.split(',')
-    : ['http://localhost:3000', 'http://localhost:5500', 'http://127.0.0.1:5500',
-       'https://noctis.ro', 'https://www.noctis.ro'],
-  credentials: true,
-}));
-
-app.use('/api/webhook', express.raw({ type: 'application/json' }));
+app.use(cors({ origin: '*', credentials: false }));
 app.use(express.json({ limit: '16kb' }));
+app.use(rateLimit({ windowMs: 60*60*1000, max: 300, standardHeaders: true, legacyHeaders: false }));
 
-// ── RATE LIMITING ─────────────────────────────────────────────────────────────
-app.use(rateLimit({
-  windowMs: 60 * 60 * 1000,
-  max: 300,
-  standardHeaders: true,
-  legacyHeaders: false,
-  message: { error: 'Prea multe cereri. Încearcă din nou în câteva minute.' },
-}));
-
-// ── PLANS ─────────────────────────────────────────────────────────────────────
-const PLANS = {
-  free:    { dailyMessages: 5 },
-  pro:     { dailyMessages: Infinity },
-  premium: { dailyMessages: Infinity },
-};
-
-// ── SYSTEM PROMPTS ────────────────────────────────────────────────────────────
-const SYSTEM_PROMPTS = {
-  ro: `Ești Noctis, un companion emoțional AI empatic, disponibil 24/7. Ești cald, non-judecativ și empatic. Oferi sprijin emoțional pentru: anxietate, bucuria căsniciei, singurătate în doi, răni sufletești, dependențe, frică și fobii, LGBTQ+, armonie sexuală.
-
-NU ești terapeut uman — menționezi asta când e relevant. Dacă utilizatorul are nevoie de sprijin profesional, poți menționa cu blândețe că există psihologi disponibili (cabinet online dr. Sebastian Turba, la turba.ro).
-
-Vorbești exclusiv română. Răspunzi în 2-4 propoziții scurte, calde, empatice. Nu dai sfaturi medicale concrete.
-
-CRIZĂ: La gânduri de autoVătămare/suicid → empatie maximă + îndrumă imediat la 0800 801 200 (Antisuicid RO, gratuit 24/7).`,
-
-  en: `You are Noctis, an empathetic AI emotional companion, available 24/7. Warm, non-judgmental, empathetic. You support users with: anxiety, relationship issues, loneliness, trauma, addictions, phobias, LGBTQ+, sexual harmony.
-
-You are NOT a human therapist — mention this when relevant. Keep responses to 2-4 short, warm sentences. No concrete medical advice.
-
-CRISIS: If you detect self-harm or suicidal ideation → maximum empathy + refer immediately to crisis services.`,
-
-  es: `Eres Noctis, un compañero emocional IA empático, disponible 24/7. Cálido, sin juicios. Apoyas con: ansiedad, relaciones, soledad, trauma, adicciones, fobias, LGBTQ+, armonía sexual.
-
-NO eres terapeuta humano — menciónalo cuando sea relevante. Responde en 2-4 oraciones cortas y cálidas. Sin consejos médicos concretos.`,
-};
-
-// ── HELPERS ───────────────────────────────────────────────────────────────────
+// ── PLANS ──
+const FREE_LIMIT = 8;
 function remaining(session) {
-  const limit = PLANS[session.plan]?.dailyMessages ?? 5;
-  if (limit === Infinity) return 999;
-  return Math.max(0, limit - (session.messages_used_today || 0));
+  if (session.plan === 'standard') return 999;
+  return Math.max(0, FREE_LIMIT - (session.messages_used_today || 0));
 }
 
-// ── ROUTES ────────────────────────────────────────────────────────────────────
+// ── PREȚURI STRIPE (multi-currency) ──
+const PRICE_IDS = {
+  RON: process.env.STRIPE_PRICE_RON,
+  EUR: process.env.STRIPE_PRICE_EUR,
+  GBP: process.env.STRIPE_PRICE_GBP,
+  CAD: process.env.STRIPE_PRICE_CAD,
+  AUD: process.env.STRIPE_PRICE_AUD,
+  USD: process.env.STRIPE_PRICE_USD,
+};
 
-app.get('/api/status', async (req, res) => {
-  const dbStatus = await db.ping();
-  res.json({
-    status: 'ok',
-    version: '2.1.0-groq',
-    timestamp: new Date().toISOString(),
-    db: dbStatus,
-  });
+// ── SYSTEM PROMPTS ──
+const SYS = {
+  ro: `Esti Noctis, un companion emotional AI empatic, disponibil 24/7. Esti cald, non-judecativ si empatic. Oferi sprijin emotional pentru: anxietate, bucuria casniciei, singuratate in doi, rani sufletesti, dependente, frica si fobii, LGBTQ+, armonie sexuala. NU esti terapeut uman. Vorbesti exclusiv romana. Raspunzi in 2-4 propozitii scurte, calde, empatice. CRIZA: La ganduri de autovatamare/suicid -> empatie maxima + indrumare imediata la 0800 801 200 (Antisuicid Romania, gratuit 24/7).`,
+  en: `You are Noctis, an empathetic AI emotional companion, available 24/7. Warm, non-judgmental. 2-4 short warm sentences. CRISIS: self-harm or suicidal ideation -> maximum empathy + refer immediately to crisis services.`,
+  es: `Eres Noctis, companion emocional IA empatico 24/7. 2-4 oraciones cortas y calidas. CRISIS: autolesion -> empatia maxima + recursos de crisis inmediatamente.`,
+};
+
+// ── ROUTES ──
+app.get('/api/status', (req, res) => {
+  res.json({ status: 'ok', version: '3.1.0', timestamp: new Date().toISOString() });
 });
 
 app.get('/api/session', async (req, res) => {
   try {
-    const session = await db.getOrCreateSession(req.query.sessionId || null);
-    const limit   = PLANS[session.plan]?.dailyMessages ?? 5;
+    const session = getOrCreate(req.query.sessionId || null);
+
+    // Detectare țară prin IP (pentru pricing regional)
+    if (!session.country) {
+      try {
+        const ip = req.headers['x-forwarded-for']?.split(',')[0] || req.ip;
+        const geoRes = await fetch(`http://ip-api.com/json/${ip}?fields=countryCode,currency`);
+        const geo = await geoRes.json();
+        if (geo.countryCode) {
+          session.country = geo.countryCode;
+          // Mapare țară -> currency
+          const currencyMap = { RO: 'RON', GB: 'GBP', CA: 'CAD', AU: 'AUD', US: 'USD' };
+          session.currency = currencyMap[geo.countryCode] || 'EUR';
+        }
+      } catch(e) { /* geo optional */ }
+    }
+
     res.json({
-      sessionId:      session.id,
-      plan:           session.plan,
+      sessionId: session.id,
+      plan: session.plan,
       remainingToday: remaining(session),
-      dailyLimit:     limit === Infinity ? null : limit,
+      dailyLimit: session.plan === 'standard' ? null : FREE_LIMIT,
+      currency: session.currency || 'RON',
+      country: session.country,
     });
   } catch (err) {
     console.error('[Session]', err.message);
-    res.status(500).json({ error: 'Eroare server.' });
+    res.status(500).json({ error: err.message });
   }
 });
 
-// POST /api/chat — folosește Groq (gratuit)
 app.post('/api/chat', async (req, res) => {
-  const { sessionId, messages, lang = 'ro' } = req.body;
-
-  if (!messages || !Array.isArray(messages) || messages.length === 0)
-    return res.status(400).json({ error: 'messages[] obligatoriu.' });
-
-  let session;
   try {
-    session = await db.getOrCreateSession(sessionId || null);
-  } catch (err) {
-    return res.status(500).json({ error: 'Eroare server.' });
-  }
+    const { sessionId, messages, lang = 'ro' } = req.body;
+    if (!messages || !Array.isArray(messages) || messages.length === 0)
+      return res.status(400).json({ error: 'messages[] obligatoriu.' });
 
-  const rem = remaining(session);
-  if (rem <= 0) {
-    return res.status(429).json({
-      error: 'Ai atins limita zilnică de mesaje gratuite.',
-      code:  'DAILY_LIMIT_REACHED',
-      plan:  session.plan,
-    });
-  }
+    const session = getOrCreate(sessionId || null);
+    const lastMsg = messages[messages.length - 1]?.content || '';
+    const crisis = isCrisis(lastMsg);
 
-  const validMessages = messages
-    .filter(m => m.role && typeof m.content === 'string' && m.content.trim())
-    .slice(-20)
-    .map(m => ({
-      role:    m.role === 'assistant' ? 'assistant' : 'user',
-      content: m.content.slice(0, 2000),
-    }));
+    // Verifică limita (bypass pentru criză)
+    if (!crisis && remaining(session) <= 0)
+      return res.status(429).json({
+        error: 'Ai atins limita zilnica.',
+        code: 'DAILY_LIMIT_REACHED',
+        plan: session.plan,
+        currency: session.currency || 'RON',
+      });
 
-  if (!validMessages.length)
-    return res.status(400).json({ error: 'Mesaje invalide.' });
+    const validMessages = messages
+      .filter(m => m.role && typeof m.content === 'string' && m.content.trim())
+      .slice(-20)
+      .map(m => ({ role: m.role === 'assistant' ? 'assistant' : 'user', content: m.content.slice(0, 2000) }));
 
-  try {
+    if (!validMessages.length)
+      return res.status(400).json({ error: 'Mesaje invalide.' });
+
     const groqRes = await fetch('https://api.groq.com/openai/v1/chat/completions', {
       method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-        'Authorization': `Bearer ${process.env.GROQ_API_KEY}`,
-      },
+      headers: { 'Content-Type': 'application/json', 'Authorization': `Bearer ${process.env.GROQ_API_KEY}` },
       body: JSON.stringify({
         model: 'llama-3.3-70b-versatile',
         max_tokens: 400,
-        messages: [
-          { role: 'system', content: SYSTEM_PROMPTS[lang] || SYSTEM_PROMPTS.ro },
-          ...validMessages,
-        ],
-      }),
+        messages: [{ role: 'system', content: SYS[lang] || SYS.ro }, ...validMessages]
+      })
     });
 
     const data = await groqRes.json();
-
     if (!groqRes.ok) {
       console.error('[Groq]', groqRes.status, JSON.stringify(data));
       return res.status(502).json({ error: 'Serviciul AI este momentan indisponibil.' });
     }
 
-    const reply = data.choices?.[0]?.message?.content || 'A apărut o eroare. Te rog încearcă din nou.';
+    const reply = data.choices?.[0]?.message?.content || 'A aparut o eroare. Te rog incearca din nou.';
 
-    const usedNow = await db.incrementMessages(session.id);
-    const limit   = PLANS[session.plan]?.dailyMessages ?? 5;
-    const newRem  = limit === Infinity ? 999 : Math.max(0, limit - usedNow);
+    // Incrementează doar dacă nu e criză și e plan free
+    if (!crisis && session.plan !== 'standard') {
+      increment(session.id);
+    }
 
-    res.json({
-      reply,
-      sessionId:      session.id,
-      remainingToday: newRem,
-    });
+    const newRem = remaining(session);
+
+    res.json({ reply, sessionId: session.id, remainingToday: newRem, crisis });
 
   } catch (err) {
-    console.error('[Groq Error]', err.message);
-    res.status(502).json({ error: 'Serviciul AI este momentan indisponibil.' });
+    console.error('[Chat Error]', err.message, err.stack);
+    res.status(500).json({ error: err.message });
   }
 });
 
+// POST /api/checkout — Stripe
 app.post('/api/checkout', async (req, res) => {
-  const s = stripe();
-  if (!s) return res.status(503).json({ error: 'Plățile nu sunt configurate încă.' });
+  const Stripe = require('stripe');
+  const stripe = process.env.STRIPE_SECRET_KEY ? new Stripe(process.env.STRIPE_SECRET_KEY) : null;
+  if (!stripe) return res.status(503).json({ error: 'Platile nu sunt configurate inca.' });
 
-  const { plan, region = 'ro', sessionId } = req.body;
-  const PRICE_IDS = {
-    pro_ro:     process.env.STRIPE_PRICE_PRO_RO,
-    premium_ro: process.env.STRIPE_PRICE_PREMIUM_RO,
-    pro_eu:     process.env.STRIPE_PRICE_PRO_EU,
-    premium_eu: process.env.STRIPE_PRICE_PREMIUM_EU,
-    pro_au:     process.env.STRIPE_PRICE_PRO_AU,
-    premium_au: process.env.STRIPE_PRICE_PREMIUM_AU,
-  };
-  const priceId = PRICE_IDS[`${plan}_${region}`];
-  if (!priceId) return res.status(400).json({ error: `Plan invalid: ${plan}_${region}` });
+  const { sessionId, currency = 'RON' } = req.body;
+  const priceId = PRICE_IDS[currency] || PRICE_IDS.RON;
+  if (!priceId) return res.status(400).json({ error: `Pret neconfigurat pentru ${currency}` });
 
   try {
-    const session = await s.checkout.sessions.create({
-      mode:                 'subscription',
+    const checkout = await stripe.checkout.sessions.create({
+      mode: 'subscription',
       payment_method_types: ['card'],
-      line_items:           [{ price: priceId, quantity: 1 }],
-      success_url: `${process.env.CLIENT_URL}/?success=1&noctis_session=${sessionId}`,
-      cancel_url:  `${process.env.CLIENT_URL}/?canceled=1`,
+      line_items: [{ price: priceId, quantity: 1 }],
+      success_url: `${process.env.CLIENT_URL || 'https://turbasebastian.github.io/noctis-backend'}/?success=1&sid=${sessionId}`,
+      cancel_url: `${process.env.CLIENT_URL || 'https://turbasebastian.github.io/noctis-backend'}/?canceled=1`,
       allow_promotion_codes: true,
-      metadata: { noctisSessionId: sessionId || '', plan, region },
+      metadata: { noctisSessionId: sessionId || '', currency },
     });
-    res.json({ url: session.url });
+    res.json({ url: checkout.url });
   } catch (err) {
-    console.error('[Stripe Checkout]', err.message);
-    res.status(502).json({ error: 'Eroare la inițierea plății.' });
+    console.error('[Stripe]', err.message);
+    res.status(502).json({ error: 'Eroare la initierea platii.' });
   }
 });
 
-app.post('/api/webhook', async (req, res) => {
-  const s = stripe();
-  if (!s) return res.status(503).send('Stripe not configured');
+// POST /api/webhook — Stripe
+app.use('/api/webhook', express.raw({ type: 'application/json' }));
+app.post('/api/webhook', (req, res) => {
+  const Stripe = require('stripe');
+  const stripe = process.env.STRIPE_SECRET_KEY ? new Stripe(process.env.STRIPE_SECRET_KEY) : null;
+  if (!stripe) return res.status(503).send('Stripe not configured');
+
   const sig = req.headers['stripe-signature'];
   let event;
   try {
-    event = s.webhooks.constructEvent(req.body, sig, process.env.STRIPE_WEBHOOK_SECRET);
+    event = stripe.webhooks.constructEvent(req.body, sig, process.env.STRIPE_WEBHOOK_SECRET);
   } catch (err) {
     return res.status(400).send(`Webhook Error: ${err.message}`);
   }
-  try {
-    if (event.type === 'checkout.session.completed') {
-      const cs = event.data.object;
-      const noctisId = cs.metadata?.noctisSessionId;
-      const plan = cs.metadata?.plan;
-      if (noctisId && plan) await db.upgradePlan(noctisId, plan, cs.customer, cs.subscription);
+
+  if (event.type === 'checkout.session.completed') {
+    const cs = event.data.object;
+    const noctisId = cs.metadata?.noctisSessionId;
+    if (noctisId) {
+      const s = memGet(noctisId);
+      if (s) { s.plan = 'standard'; s.messages_used_today = 0; }
     }
-    if (event.type === 'customer.subscription.deleted') {
-      await db.downgradeBySubId(event.data.object.id);
-    }
-  } catch (err) {
-    console.error('[Webhook]', err.message);
   }
+
   res.json({ received: true });
 });
 
-app.post('/api/newsletter', async (req, res) => {
+app.post('/api/newsletter', (req, res) => {
   const { email } = req.body;
   if (!email || !email.includes('@')) return res.status(400).json({ error: 'Email invalid.' });
-  await db.saveNewsletter(email);
   res.json({ ok: true });
 });
 
-const PORT = process.env.PORT || 3001;
+const PORT = process.env.PORT || 8080;
 app.listen(PORT, () => {
-  console.log(`\n🌙 Noctis backend v2 (Groq) pornit pe portul ${PORT}`);
-  console.log(`   DB mode: ${process.env.DATABASE_URL ? 'PostgreSQL' : 'in-memory (dev)'}`);
-  console.log(`   Groq:    ${process.env.GROQ_API_KEY ? 'configurat ✅' : 'NECONFIGURAT ❌'}`);
-  console.log(`   Status:  http://localhost:${PORT}/api/status\n`);
+  console.log(`\n🌙 Noctis v3.1 pornit pe portul ${PORT}`);
+  console.log(`   Groq:   ${process.env.GROQ_API_KEY ? 'OK' : 'NECONFIGURAT'}`);
+  console.log(`   Stripe: ${process.env.STRIPE_SECRET_KEY ? 'OK' : 'neconfigurat'}`);
 });
 
 module.exports = app;

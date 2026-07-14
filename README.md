@@ -163,3 +163,4 @@ const BACKEND_URL = 'https://noctis-backend-xxx.up.railway.app';
 | `POST /api/checkout` | Inițiază Stripe Checkout |
 | `POST /api/webhook` | Stripe webhook (intern) |
 | `POST /api/newsletter` | Salvează email newsletter |
+
