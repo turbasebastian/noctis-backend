@@ -910,7 +910,7 @@ footer{
   <h2 class="sec-title">3.5 milioane de români<br><em>în diaspora</em></h2>
   <p class="sec-body">Fiecare piață are propriul preț, metodă de plată și mesaj adaptat. O singură platformă, șase piețe.</p>
   <div class="markets-grid">
-    <div class="mkt"><div class="mkt-flag">🇷🇴</div><h3>România</h3><div class="mkt-pop">15M · Gen Z + Millennials</div><div class="mkt-price">49 RON<span style="font-family:var(--ff-body);font-size:13px;color:var(--muted)">/lună</span></div><div class="mkt-note">Card · PayU · Revolut · Transfer bancar</div></div>
+    <div class="mkt"><div class="mkt-flag">🇷🇴</div><h3>România</h3><div class="mkt-pop">15M · Gen Z + Millennials</div><div class="mkt-price">29 RON<span style="font-family:var(--ff-body);font-size:13px;color:var(--muted)">/lună</span></div><div class="mkt-note">Card · PayU · Revolut · Transfer bancar</div></div>
     <div class="mkt"><div class="mkt-flag">🇬🇧</div><h3>United Kingdom</h3><div class="mkt-pop">~500K români · NHS waitlist 18 luni</div><div class="mkt-price">£9<span style="font-family:var(--ff-body);font-size:13px;color:var(--muted)">/month</span></div><div class="mkt-note">Revolut · Stripe · Apple Pay · Google Pay</div></div>
     <div class="mkt"><div class="mkt-flag">🇪🇸</div><h3>España</h3><div class="mkt-pop">~1M români · barieră lingvistică</div><div class="mkt-price">€9<span style="font-family:var(--ff-body);font-size:13px;color:var(--muted)">/mes</span></div><div class="mkt-note">Revolut · Bizum · Stripe · Apple Pay</div></div>
     <div class="mkt"><div class="mkt-flag">🇫🇷</div><h3>France</h3><div class="mkt-pop">~130K români · psiholog 80€/ședință</div><div class="mkt-price">€9<span style="font-family:var(--ff-body);font-size:13px;color:var(--muted)">/mois</span></div><div class="mkt-note">Revolut · Stripe · Lydia · Apple Pay</div></div>
@@ -1242,11 +1242,11 @@ footer{
       </div>
       <div class="pm-row hi" onclick="selectPlanPay('pro')">
         <div class="pm-row-left"><h4>Pro ✦</h4><p>Conversații nelimitate · Jurnal · Exerciții</p></div>
-        <div class="pm-row-price"><div class="big">49 RON</div><div class="per">/lună</div></div>
+        <div class="pm-row-price"><div class="big">29 RON</div><div class="per">/lună</div></div>
       </div>
       <div class="pm-row" onclick="selectPlanPay('premium')">
         <div class="pm-row-left"><h4>Premium</h4><p>Tot Pro + rapoarte lunare + prioritate</p></div>
-        <div class="pm-row-price"><div class="big">99 RON</div><div class="per">/lună</div></div>
+        <div class="pm-row-price"><div class="big">59 RON</div><div class="per">/lună</div></div>
       </div>
     </div>
     <div class="pm-methods-sec">
@@ -1524,7 +1524,7 @@ function showUpgradePrompt() {
         Ai atins limita zilnică de 5 mesaje 🌙
       </div>
       <div style="font-size:12px;font-weight:300;color:var(--muted);margin-bottom:12px;line-height:1.5">
-        Cu <strong style="color:var(--violet)">Pro (49 RON/lună)</strong> ai conversații nelimitate,
+        Cu <strong style="color:var(--violet)">Pro (29 RON/lună)</strong> ai conversații nelimitate,
         jurnal de progres și exerciții terapeutice.
       </div>
       <button onclick="openPayModal()" style="padding:8px 24px;border-radius:20px;
@@ -1567,8 +1567,8 @@ const pricingData={
   ro:{
     plans:[
       {name:'Gratuit',price:'0',curr:'RON',period:'/lună',feats:['5 mesaje pe zi','Teme de bază','Fără card necesar'],off:['Conversații nelimitate','Jurnal de progres','Exerciții ghidate'],star:false},
-      {name:'Pro',price:'49',curr:'RON',period:'/lună',feats:['Conversații nelimitate','Jurnal de progres','Exerciții terapeutice ghidate','Suport prioritar 24/7'],off:[],star:true},
-      {name:'Premium',price:'99',curr:'RON',period:'/lună',feats:['Tot din Pro','Rapoarte lunare de progres','Sesiuni de respirație & meditație','Acces beta la funcții noi'],off:[],star:false}
+      {name:'Pro',price:'29',curr:'RON',period:'/lună',feats:['Conversații nelimitate','Jurnal de progres','Exerciții terapeutice ghidate','Suport prioritar 24/7'],off:[],star:true},
+      {name:'Premium',price:'59',curr:'RON',period:'/lună',feats:['Tot din Pro','Rapoarte lunare de progres','Sesiuni de respirație & meditație','Acces beta la funcții noi'],off:[],star:false}
     ],
     methods:[
       {icon:'💳',name:'Card bancar',desc:'Visa · Mastercard · orice emisă în RO',hi:false},
@@ -2062,6 +2062,7 @@ if(urlParams.get('noctis_session')){
 </script>
 <script>async function openPayModal(){const sid=localStorage.getItem('noctis_session_id');const r=await fetch('https://noctis-backend-production.up.railway.app/api/checkout',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({sessionId:sid,currency:'RON'})});const d=await r.json();if(d.url)window.location.href=d.url;}</script><script>const wa=document.querySelector('.wa-float');let dragging=false,ox,oy;wa.addEventListener('mousedown',e=>{dragging=true;ox=e.clientX-wa.getBoundingClientRect().left;oy=e.clientY-wa.getBoundingClientRect().top;wa.style.transition='none';e.preventDefault()});document.addEventListener('mousemove',e=>{if(!dragging)return;wa.style.right='auto';wa.style.bottom='auto';wa.style.left=(e.clientX-ox)+'px';wa.style.top=(e.clientY-oy)+'px'});document.addEventListener('mouseup',()=>dragging=false);wa.addEventListener('touchstart',e=>{const t=e.touches[0];ox=t.clientX-wa.getBoundingClientRect().left;oy=t.clientY-wa.getBoundingClientRect().top;wa.style.transition='none'},{ passive:true });document.addEventListener('touchmove',e=>{const t=e.touches[0];wa.style.right='auto';wa.style.bottom='auto';wa.style.left=(t.clientX-ox)+'px';wa.style.top=(t.clientY-oy)+'px'},{ passive:true });</script><script>const wa=document.querySelector('.wa-float');let dragging=false,moved=false,ox,oy;wa.addEventListener('mousedown',e=>{dragging=true;moved=false;ox=e.clientX-wa.getBoundingClientRect().left;oy=e.clientY-wa.getBoundingClientRect().top;wa.style.transition='none';e.preventDefault()});document.addEventListener('mousemove',e=>{if(!dragging)return;moved=true;wa.style.right='auto';wa.style.bottom='auto';wa.style.left=(e.clientX-ox)+'px';wa.style.top=(e.clientY-oy)+'px'});document.addEventListener('mouseup',()=>{dragging=false});wa.addEventListener('click',e=>{if(moved){e.preventDefault();moved=false}});wa.addEventListener('touchstart',e=>{const t=e.touches[0];moved=false;ox=t.clientX-wa.getBoundingClientRect().left;oy=t.clientY-wa.getBoundingClientRect().top;wa.style.transition='none'},{ passive:true});document.addEventListener('touchmove',e=>{moved=true;const t=e.touches[0];wa.style.right='auto';wa.style.bottom='auto';wa.style.left=(t.clientX-ox)+'px';wa.style.top=(t.clientY-oy)+'px'},{ passive:true});wa.addEventListener('touchend',e=>{if(moved)e.preventDefault()});</script></body>
 </html>
+
 
 
 
