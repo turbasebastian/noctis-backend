@@ -645,7 +645,7 @@ footer{
 .newsletter-note{font-size:11px;color:var(--ghost);margin-top:1rem}
 
 /* ── WHATSAPP FLOAT ── */
-.wa-float{position:fixed;bottom:2rem;right:2rem;z-index:998;width:54px;height:54px;border-radius:50%;background:#25D366;display:flex;align-items:center;justify-content:center;color:white;text-decoration:none;box-shadow:0 4px 20px rgba(37,211,102,0.4);transition:all 0.3s;animation:wa-bounce 2s infinite}
+.wa-float{position:fixed;bottom:2rem;right:2rem;z-index:998;width:44px;height:44px;border-radius:50%;background:#25D366;display:flex;align-items:center;justify-content:center;color:white;text-decoration:none;box-shadow:0 4px 20px rgba(37,211,102,0.4);transition:all 0.3s;animation:wa-bounce 2s infinite}
 .wa-float:hover{transform:scale(1.1);box-shadow:0 6px 30px rgba(37,211,102,0.6)}
 .wa-float svg{width:28px;height:28px;fill:white}
 @keyframes wa-bounce{0%,100%{transform:translateY(0)}50%{transform:translateY(-6px)}}
@@ -2062,6 +2062,7 @@ if(urlParams.get('noctis_session')){
 </script>
 <script>async function openPayModal(){const sid=localStorage.getItem('noctis_session_id');const r=await fetch('https://noctis-backend-production.up.railway.app/api/checkout',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({sessionId:sid,currency:'RON'})});const d=await r.json();if(d.url)window.location.href=d.url;}</script><script>const wa=document.querySelector('.wa-float');let dragging=false,ox,oy;wa.addEventListener('mousedown',e=>{dragging=true;ox=e.clientX-wa.getBoundingClientRect().left;oy=e.clientY-wa.getBoundingClientRect().top;wa.style.transition='none';e.preventDefault()});document.addEventListener('mousemove',e=>{if(!dragging)return;wa.style.right='auto';wa.style.bottom='auto';wa.style.left=(e.clientX-ox)+'px';wa.style.top=(e.clientY-oy)+'px'});document.addEventListener('mouseup',()=>dragging=false);wa.addEventListener('touchstart',e=>{const t=e.touches[0];ox=t.clientX-wa.getBoundingClientRect().left;oy=t.clientY-wa.getBoundingClientRect().top;wa.style.transition='none'},{ passive:true });document.addEventListener('touchmove',e=>{const t=e.touches[0];wa.style.right='auto';wa.style.bottom='auto';wa.style.left=(t.clientX-ox)+'px';wa.style.top=(t.clientY-oy)+'px'},{ passive:true });</script><script>const wa=document.querySelector('.wa-float');let dragging=false,moved=false,ox,oy;wa.addEventListener('mousedown',e=>{dragging=true;moved=false;ox=e.clientX-wa.getBoundingClientRect().left;oy=e.clientY-wa.getBoundingClientRect().top;wa.style.transition='none';e.preventDefault()});document.addEventListener('mousemove',e=>{if(!dragging)return;moved=true;wa.style.right='auto';wa.style.bottom='auto';wa.style.left=(e.clientX-ox)+'px';wa.style.top=(e.clientY-oy)+'px'});document.addEventListener('mouseup',()=>{dragging=false});wa.addEventListener('click',e=>{if(moved){e.preventDefault();moved=false}});wa.addEventListener('touchstart',e=>{const t=e.touches[0];moved=false;ox=t.clientX-wa.getBoundingClientRect().left;oy=t.clientY-wa.getBoundingClientRect().top;wa.style.transition='none'},{ passive:true});document.addEventListener('touchmove',e=>{moved=true;const t=e.touches[0];wa.style.right='auto';wa.style.bottom='auto';wa.style.left=(t.clientX-ox)+'px';wa.style.top=(t.clientY-oy)+'px'},{ passive:true});wa.addEventListener('touchend',e=>{if(moved)e.preventDefault()});</script></body>
 </html>
+
 
 
 
