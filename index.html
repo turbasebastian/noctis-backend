@@ -1219,7 +1219,7 @@ footer{
     </div>
     <div class="am-in-row">
       <input class="am-in" id="am-in" placeholder="Scrie ce simți..." onkeydown="if(event.key==='Enter')appSend()"/>
-      <button class="send" onclick="appSend()"><svg viewBox="0 0 24 24"><path d="M2 21l21-9L2 3v7l15 2-15 2z"/></svg></button>
+      <button id="mic-btn" onclick="toggleMic()" style="background:none;border:none;cursor:pointer;padding:6px;color:var(--muted);font-size:22px;" title="Vorbeste">MIC</button><button class="send" onclick="appSend()"><svg viewBox="0 0 24 24"><path d="M2 21l21-9L2 3v7l15 2-15 2z"/></svg></button>
     </div>
     <div class="am-disc">Noctis oferă suport emoțional AI. Nu înlocuiește terapia profesională. · <a href="#" style="color:var(--violet)">GDPR</a></div>
   </div>
