@@ -1864,7 +1864,7 @@ async function callNoctis(msg){
 
     appHistory.push({role:'assistant',content:reply});
     saveToHistory('ai',reply);
-    addAMsg(reply,'ai');if(window.speechSynthesis&&micActive){const u=new SpeechSynthesisUtterance(reply);u.lang='ro-RO';u.rate=0.9;u.onend=()=>{if(micActive)toggleMic();};speechSynthesis.speak(u);};
+    addAMsg(reply,'ai');if(window.speechSynthesis){const u=new SpeechSynthesisUtterance(reply);u.lang='ro-RO';u.rate=0.9;u.onend=()=>{if(micActive)toggleMic();};speechSynthesis.speak(u);};
 
   }catch(e){
     removeATyping();
