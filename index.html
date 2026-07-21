@@ -1864,7 +1864,7 @@ async function callNoctis(msg){
 
     appHistory.push({role:'assistant',content:reply});
     saveToHistory('ai',reply);
-    addAMsg(reply,'ai');if(window.speechSynthesis){const u=new SpeechSynthesisUtterance(reply);u.lang='ro-RO';u.rate=0.85;u.pitch=1.1;const voices=speechSynthesis.getVoices();const roVoice=voices.find(v=>v.lang.startsWith('ro'))||voices.find(v=>v.name.toLowerCase().includes('female'))||voices[0];if(roVoice)u.voice=roVoice;u.onend=()=>{if(micActive)toggleMic();};speechSynthesis.speak(u);};
+    addAMsg(reply,'ai');
 
   }catch(e){
     removeATyping();
